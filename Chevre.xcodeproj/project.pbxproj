@@ -1,0 +1,290 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		43E92E2E140F627700A54E6C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43E92E2D140F627700A54E6C /* Cocoa.framework */; };
+		43E92E38140F627800A54E6C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43E92E36140F627800A54E6C /* InfoPlist.strings */; };
+		43E92E3A140F627800A54E6C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E92E39140F627800A54E6C /* main.m */; };
+		43E92E3E140F627800A54E6C /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 43E92E3C140F627800A54E6C /* Credits.rtf */; };
+		43E92E41140F627800A54E6C /* ChevreAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E92E40140F627800A54E6C /* ChevreAppDelegate.m */; };
+		43E92E44140F627800A54E6C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43E92E42140F627800A54E6C /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		43E92E29140F627700A54E6C /* Chevre.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chevre.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		43E92E2D140F627700A54E6C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		43E92E30140F627700A54E6C /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		43E92E31140F627700A54E6C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		43E92E32140F627700A54E6C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		43E92E35140F627800A54E6C /* Chevre-Info.plist */ = {isa = PBXFileReference; path = "Chevre-Info.plist"; sourceTree = "<group>"; };
+		43E92E37140F627800A54E6C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		43E92E39140F627800A54E6C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		43E92E3B140F627800A54E6C /* Chevre-Prefix.pch */ = {isa = PBXFileReference; path = "Chevre-Prefix.pch"; sourceTree = "<group>"; };
+		43E92E3D140F627800A54E6C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		43E92E3F140F627800A54E6C /* ChevreAppDelegate.h */ = {isa = PBXFileReference; path = ChevreAppDelegate.h; sourceTree = "<group>"; };
+		43E92E40140F627800A54E6C /* ChevreAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChevreAppDelegate.m; sourceTree = "<group>"; };
+		43E92E43140F627800A54E6C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		43E92E26140F627700A54E6C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43E92E2E140F627700A54E6C /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		43E92E1E140F627700A54E6C = {
+			isa = PBXGroup;
+			children = (
+				43E92E33140F627700A54E6C /* Chevre */,
+				43E92E2C140F627700A54E6C /* Frameworks */,
+				43E92E2A140F627700A54E6C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		43E92E2A140F627700A54E6C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				43E92E29140F627700A54E6C /* Chevre.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		43E92E2C140F627700A54E6C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				43E92E2D140F627700A54E6C /* Cocoa.framework */,
+				43E92E2F140F627700A54E6C /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		43E92E2F140F627700A54E6C /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				43E92E30140F627700A54E6C /* AppKit.framework */,
+				43E92E31140F627700A54E6C /* CoreData.framework */,
+				43E92E32140F627700A54E6C /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		43E92E33140F627700A54E6C /* Chevre */ = {
+			isa = PBXGroup;
+			children = (
+				43E92E3F140F627800A54E6C /* ChevreAppDelegate.h */,
+				43E92E40140F627800A54E6C /* ChevreAppDelegate.m */,
+				43E92E42140F627800A54E6C /* MainMenu.xib */,
+				43E92E34140F627800A54E6C /* Supporting Files */,
+			);
+			path = Chevre;
+			sourceTree = "<group>";
+		};
+		43E92E34140F627800A54E6C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				43E92E35140F627800A54E6C /* Chevre-Info.plist */,
+				43E92E36140F627800A54E6C /* InfoPlist.strings */,
+				43E92E39140F627800A54E6C /* main.m */,
+				43E92E3B140F627800A54E6C /* Chevre-Prefix.pch */,
+				43E92E3C140F627800A54E6C /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		43E92E28140F627700A54E6C /* Chevre */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 43E92E47140F627800A54E6C /* Build configuration list for PBXNativeTarget "Chevre" */;
+			buildPhases = (
+				43E92E25140F627700A54E6C /* Sources */,
+				43E92E26140F627700A54E6C /* Frameworks */,
+				43E92E27140F627700A54E6C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Chevre;
+			productName = Chevre;
+			productReference = 43E92E29140F627700A54E6C /* Chevre.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		43E92E20140F627700A54E6C /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 43E92E23140F627700A54E6C /* Build configuration list for PBXProject "Chevre" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 43E92E1E140F627700A54E6C;
+			productRefGroup = 43E92E2A140F627700A54E6C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				43E92E28140F627700A54E6C /* Chevre */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		43E92E27140F627700A54E6C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43E92E38140F627800A54E6C /* InfoPlist.strings in Resources */,
+				43E92E3E140F627800A54E6C /* Credits.rtf in Resources */,
+				43E92E44140F627800A54E6C /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		43E92E25140F627700A54E6C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43E92E3A140F627800A54E6C /* main.m in Sources */,
+				43E92E41140F627800A54E6C /* ChevreAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		43E92E36140F627800A54E6C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				43E92E37140F627800A54E6C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		43E92E3C140F627800A54E6C /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				43E92E3D140F627800A54E6C /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		43E92E42140F627800A54E6C /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				43E92E43140F627800A54E6C /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		43E92E45140F627800A54E6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		43E92E46140F627800A54E6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		43E92E48140F627800A54E6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Chevre/Chevre-Prefix.pch";
+				INFOPLIST_FILE = "Chevre/Chevre-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		43E92E49140F627800A54E6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Chevre/Chevre-Prefix.pch";
+				INFOPLIST_FILE = "Chevre/Chevre-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		43E92E23140F627700A54E6C /* Build configuration list for PBXProject "Chevre" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43E92E45140F627800A54E6C /* Debug */,
+				43E92E46140F627800A54E6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		43E92E47140F627800A54E6C /* Build configuration list for PBXNativeTarget "Chevre" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43E92E48140F627800A54E6C /* Debug */,
+				43E92E49140F627800A54E6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 43E92E20140F627700A54E6C /* Project object */;
+}
