@@ -7,28 +7,55 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43802A6D1411B5800004F585 /* PreviewWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43802A6C1411B5800004F585 /* PreviewWindow.xib */; };
+		43802A701411B6050004F585 /* PreviewWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43802A6F1411B6050004F585 /* PreviewWindowController.m */; };
+		4381F73214138F1F0099C263 /* NSString+regex.m in Sources */ = {isa = PBXBuildFile; fileRef = 4381F73114138F1F0099C263 /* NSString+regex.m */; };
 		43E92E2E140F627700A54E6C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43E92E2D140F627700A54E6C /* Cocoa.framework */; };
 		43E92E38140F627800A54E6C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43E92E36140F627800A54E6C /* InfoPlist.strings */; };
 		43E92E3A140F627800A54E6C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E92E39140F627800A54E6C /* main.m */; };
 		43E92E3E140F627800A54E6C /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 43E92E3C140F627800A54E6C /* Credits.rtf */; };
 		43E92E41140F627800A54E6C /* ChevreAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E92E40140F627800A54E6C /* ChevreAppDelegate.m */; };
 		43E92E44140F627800A54E6C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43E92E42140F627800A54E6C /* MainMenu.xib */; };
+		43E92E4B140F631600A54E6C /* PreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43E92E4A140F631600A54E6C /* PreferencesWindow.xib */; };
+		43E92E4D140F64C500A54E6C /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43E92E4C140F64C500A54E6C /* Quartz.framework */; };
+		43E92E50140F6C6E00A54E6C /* PreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E92E4F140F6C6E00A54E6C /* PreferencesWindowController.m */; };
+		43F9226A14101F55001E1D36 /* Datasource.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F9226914101F55001E1D36 /* Datasource.m */; };
+		43F9226E14101F60001E1D36 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F9226D14101F60001E1D36 /* Image.m */; };
+		43F9227114101F74001E1D36 /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F9227014101F74001E1D36 /* Group.m */; };
+		43F92276141036CA001E1D36 /* BrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F92275141036CA001E1D36 /* BrowserViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		43802A6C1411B5800004F585 /* PreviewWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreviewWindow.xib; sourceTree = "<group>"; };
+		43802A6E1411B6050004F585 /* PreviewWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreviewWindowController.h; sourceTree = "<group>"; };
+		43802A6F1411B6050004F585 /* PreviewWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreviewWindowController.m; sourceTree = "<group>"; };
+		4381F73014138F1F0099C263 /* NSString+regex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+regex.h"; sourceTree = "<group>"; };
+		4381F73114138F1F0099C263 /* NSString+regex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+regex.m"; sourceTree = "<group>"; };
 		43E92E29140F627700A54E6C /* Chevre.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chevre.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43E92E2D140F627700A54E6C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		43E92E30140F627700A54E6C /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		43E92E31140F627700A54E6C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		43E92E32140F627700A54E6C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		43E92E35140F627800A54E6C /* Chevre-Info.plist */ = {isa = PBXFileReference; path = "Chevre-Info.plist"; sourceTree = "<group>"; };
+		43E92E35140F627800A54E6C /* Chevre-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Chevre-Info.plist"; sourceTree = "<group>"; };
 		43E92E37140F627800A54E6C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		43E92E39140F627800A54E6C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		43E92E3B140F627800A54E6C /* Chevre-Prefix.pch */ = {isa = PBXFileReference; path = "Chevre-Prefix.pch"; sourceTree = "<group>"; };
+		43E92E3B140F627800A54E6C /* Chevre-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Chevre-Prefix.pch"; sourceTree = "<group>"; };
 		43E92E3D140F627800A54E6C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		43E92E3F140F627800A54E6C /* ChevreAppDelegate.h */ = {isa = PBXFileReference; path = ChevreAppDelegate.h; sourceTree = "<group>"; };
+		43E92E3F140F627800A54E6C /* ChevreAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChevreAppDelegate.h; sourceTree = "<group>"; };
 		43E92E40140F627800A54E6C /* ChevreAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChevreAppDelegate.m; sourceTree = "<group>"; };
 		43E92E43140F627800A54E6C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		43E92E4A140F631600A54E6C /* PreferencesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesWindow.xib; sourceTree = "<group>"; };
+		43E92E4C140F64C500A54E6C /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
+		43E92E4E140F6C6E00A54E6C /* PreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesWindowController.h; sourceTree = "<group>"; };
+		43E92E4F140F6C6E00A54E6C /* PreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesWindowController.m; sourceTree = "<group>"; };
+		43F9226814101F55001E1D36 /* Datasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Datasource.h; sourceTree = "<group>"; };
+		43F9226914101F55001E1D36 /* Datasource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Datasource.m; sourceTree = "<group>"; };
+		43F9226C14101F60001E1D36 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
+		43F9226D14101F60001E1D36 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
+		43F9226F14101F74001E1D36 /* Group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Group.h; sourceTree = "<group>"; };
+		43F9227014101F74001E1D36 /* Group.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Group.m; sourceTree = "<group>"; };
+		43F92274141036CA001E1D36 /* BrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowserViewController.h; sourceTree = "<group>"; };
+		43F92275141036CA001E1D36 /* BrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowserViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43E92E4D140F64C500A54E6C /* Quartz.framework in Frameworks */,
 				43E92E2E140F627700A54E6C /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -46,6 +74,7 @@
 		43E92E1E140F627700A54E6C = {
 			isa = PBXGroup;
 			children = (
+				43E92E4C140F64C500A54E6C /* Quartz.framework */,
 				43E92E33140F627700A54E6C /* Chevre */,
 				43E92E2C140F627700A54E6C /* Frameworks */,
 				43E92E2A140F627700A54E6C /* Products */,
@@ -82,9 +111,8 @@
 		43E92E33140F627700A54E6C /* Chevre */ = {
 			isa = PBXGroup;
 			children = (
-				43E92E3F140F627800A54E6C /* ChevreAppDelegate.h */,
-				43E92E40140F627800A54E6C /* ChevreAppDelegate.m */,
-				43E92E42140F627800A54E6C /* MainMenu.xib */,
+				43F9227314103261001E1D36 /* UI */,
+				43F9227214103245001E1D36 /* Core */,
 				43E92E34140F627800A54E6C /* Supporting Files */,
 			);
 			path = Chevre;
@@ -98,8 +126,41 @@
 				43E92E39140F627800A54E6C /* main.m */,
 				43E92E3B140F627800A54E6C /* Chevre-Prefix.pch */,
 				43E92E3C140F627800A54E6C /* Credits.rtf */,
+				4381F73014138F1F0099C263 /* NSString+regex.h */,
+				4381F73114138F1F0099C263 /* NSString+regex.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		43F9227214103245001E1D36 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				43F9226814101F55001E1D36 /* Datasource.h */,
+				43F9226914101F55001E1D36 /* Datasource.m */,
+				43F9226C14101F60001E1D36 /* Image.h */,
+				43F9226D14101F60001E1D36 /* Image.m */,
+				43F9226F14101F74001E1D36 /* Group.h */,
+				43F9227014101F74001E1D36 /* Group.m */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		43F9227314103261001E1D36 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				43E92E42140F627800A54E6C /* MainMenu.xib */,
+				43E92E3F140F627800A54E6C /* ChevreAppDelegate.h */,
+				43E92E40140F627800A54E6C /* ChevreAppDelegate.m */,
+				43F92274141036CA001E1D36 /* BrowserViewController.h */,
+				43F92275141036CA001E1D36 /* BrowserViewController.m */,
+				43E92E4A140F631600A54E6C /* PreferencesWindow.xib */,
+				43E92E4E140F6C6E00A54E6C /* PreferencesWindowController.h */,
+				43E92E4F140F6C6E00A54E6C /* PreferencesWindowController.m */,
+				43802A6C1411B5800004F585 /* PreviewWindow.xib */,
+				43802A6E1411B6050004F585 /* PreviewWindowController.h */,
+				43802A6F1411B6050004F585 /* PreviewWindowController.m */,
+			);
+			name = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +213,8 @@
 				43E92E38140F627800A54E6C /* InfoPlist.strings in Resources */,
 				43E92E3E140F627800A54E6C /* Credits.rtf in Resources */,
 				43E92E44140F627800A54E6C /* MainMenu.xib in Resources */,
+				43E92E4B140F631600A54E6C /* PreferencesWindow.xib in Resources */,
+				43802A6D1411B5800004F585 /* PreviewWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +227,13 @@
 			files = (
 				43E92E3A140F627800A54E6C /* main.m in Sources */,
 				43E92E41140F627800A54E6C /* ChevreAppDelegate.m in Sources */,
+				43E92E50140F6C6E00A54E6C /* PreferencesWindowController.m in Sources */,
+				43F9226A14101F55001E1D36 /* Datasource.m in Sources */,
+				43F9226E14101F60001E1D36 /* Image.m in Sources */,
+				43F9227114101F74001E1D36 /* Group.m in Sources */,
+				43F92276141036CA001E1D36 /* BrowserViewController.m in Sources */,
+				43802A701411B6050004F585 /* PreviewWindowController.m in Sources */,
+				4381F73214138F1F0099C263 /* NSString+regex.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +353,7 @@
 				43E92E49140F627800A54E6C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

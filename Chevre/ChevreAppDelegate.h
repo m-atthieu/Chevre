@@ -7,11 +7,22 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <Quartz/Quartz.h>
+
+#import "BrowserViewController.h"
 
 @interface ChevreAppDelegate : NSObject <NSApplicationDelegate> {
     NSWindow *window;
 }
 
 @property (assign) IBOutlet NSWindow *window;
+@property (assign) IBOutlet BrowserViewController* browserViewController;
+@property IBOutlet NSArrayController* datesController;
+@property IBOutlet NSArray* dates;
+
+- (IBAction) openPreferencesWindow: (id) sender;
+- (IBAction) groupSelection: (id) sender;
+- (IBAction) openPreviewWindow: (id) sender;
+- (NSArray*) getDates;
 
 @end
