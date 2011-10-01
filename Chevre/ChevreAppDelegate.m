@@ -49,6 +49,7 @@
                                             options: NSDirectoryEnumerationSkipsHiddenFiles
                                        errorHandler: nil];
     NSMutableArray* newDates = [[NSMutableArray alloc] init];
+    NSArray* content;
     
     NSURL* filename;
     NSString* path;
@@ -59,9 +60,12 @@
         match = [path matchRegex: @".*[0-9]{4}\/[0-9]{2}\/[0-9]{2}"];
         [filename getResourceValue: &isDir forKey: NSURLIsDirectoryKey error: nil];
         if(match && [isDir boolValue] == YES){
-            [newDates addObject: [NSDictionary dictionaryWithObjectsAndKeys: 
-                                  filename, @"url", 
-                                  path, @"name", nil]];
+            content = [fm contentsOfDirectoryAtURL: filename includingPropertiesForKeys: nil options: NSDirectoryEnumerationSkipsHiddenFiles error: nil];
+            if( [content count] != 0){
+                [newDates addObject: [NSDictionary dictionaryWithObjectsAndKeys: 
+                                      filename, @"url", 
+                                      path, @"name", nil]];
+            }
         }
     }
 
