@@ -39,7 +39,9 @@
                                               error: nil];
     for(NSURL* file in content){
         if([extensions containsObject: [file pathExtension]]){
-            [images addObject: [[Image alloc] initWithURL: file]];
+            Image* image = [[Image alloc] initWithURL: file];
+            [images addObject: image];
+            [image release];
         }
     }
 }

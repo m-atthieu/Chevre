@@ -1352,7 +1352,7 @@
 				<int key="NSWindowStyleMask">15</int>
 				<int key="NSWindowBacking">2</int>
 				<string key="NSWindowRect">{{335, 390}, {573, 533}}</string>
-				<int key="NSWTFlags">1954021376</int>
+				<int key="NSWTFlags">880279552</int>
 				<string key="NSWindowTitle">Chevre</string>
 				<string key="NSWindowClass">NSWindow</string>
 				<nil key="NSViewClass"/>

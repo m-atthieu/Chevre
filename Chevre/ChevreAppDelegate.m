@@ -60,12 +60,12 @@
         [filename getResourceValue: &isDir forKey: NSURLIsDirectoryKey error: nil];
         if(match && [isDir boolValue] == YES){
             [newDates addObject: [NSDictionary dictionaryWithObjectsAndKeys: 
-                                              filename, @"url", 
-                                              path, @"name", nil]];
+                                  filename, @"url", 
+                                  path, @"name", nil]];
         }
     }
 
-    return newDates;
+    return [newDates autorelease];
 }
 
 - (IBAction) changeDate: (id) sender

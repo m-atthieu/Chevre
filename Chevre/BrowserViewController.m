@@ -19,7 +19,9 @@
         NSString* depot = [[NSUserDefaults standardUserDefaults] valueForKey: @"depot"];
         if(depot != nil){
             NSURL* url = [NSURL URLWithString: depot];
-            [self setDatasource: [[Datasource alloc] initWithURL: url]];
+            Datasource* tDatasource = [[Datasource alloc] initWithURL: url];
+            [self setDatasource: tDatasource];
+            //[tDatasource release];
         }
     }
     return self;
@@ -42,6 +44,7 @@
 
 - (void) updateDatasource: (Datasource*) aDatasource
 {
+    [datasource release];
     [self setDatasource: aDatasource];
     [browserView setDataSource: aDatasource];
     [browserView reloadData];

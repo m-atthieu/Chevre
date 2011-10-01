@@ -71,10 +71,11 @@
         to = [file valueForKey: @"to"];
         directory = [to URLByDeletingLastPathComponent];
         [fm createDirectoryAtURL: directory withIntermediateDirectories: YES attributes: nil error: &error];
-        if(error != nil){ NSLog(@"error : %@", [error localizedDescription]); continue; }
+        if(error != nil){ NSLog(@"error creating %@: %@", directory, [error localizedDescription]); continue; }
         [fm moveItemAtURL: [file valueForKey: @"from"] toURL: to error: &error];
-        if(error != nil){ NSLog(@"error : %@", [error localizedDescription]); continue; }
+        if(error != nil){ NSLog(@"error moving %@: %@", [file valueForKey: @"from"], [error localizedDescription]); continue; }
     }
+    [self close];
 }
 
 @end
