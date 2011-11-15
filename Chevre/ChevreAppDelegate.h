@@ -17,8 +17,8 @@
 
 @property (assign) IBOutlet NSWindow *window;
 @property (assign) IBOutlet BrowserViewController* browserViewController;
-@property IBOutlet NSArrayController* datesController;
-@property IBOutlet NSArray* dates;
+@property (assign) IBOutlet NSArrayController* datesController;
+@property (assign) IBOutlet NSArray* dates;
 
 - (IBAction) openPreferencesWindow: (id) sender;
 - (IBAction) groupSelection: (id) sender;
