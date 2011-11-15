@@ -50,6 +50,9 @@
                                        errorHandler: nil];
     NSMutableArray* newDates = [[NSMutableArray alloc] init];
     NSArray* content;
+
+    // so we can return to the base directory
+    [newDates addObject: [NSDictionary dictionaryWithObjectsAndKeys: base, @"url", @"vrac", @"name", nil]];
     
     NSURL* filename;
     NSString* path;
