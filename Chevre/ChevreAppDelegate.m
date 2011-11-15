@@ -27,11 +27,6 @@
     [wc showWindow: sender];
 }
 
-- (IBAction) groupSelection: (id) sender
-{
-    [browserViewController groupSelection];
-}
-
 - (IBAction) openPreviewWindow: (id) sender
 {
     NSWindowController* wc = [[PreviewWindowController alloc] initWithDatasource: [browserViewController datasource]];
@@ -82,6 +77,17 @@
 {
     NSURL* url = [[datesController selection] valueForKey: @"url"];
     [browserViewController updateDatasource: [[Datasource alloc] initWithURL: url]];
+}
+
+
+- (IBAction) ungroupSelection: (id) sender
+{
+    // TODO
+}
+
+- (IBAction) deleteGroupAtSelection: (id)sender
+{
+    // TODO
 }
 
 @end

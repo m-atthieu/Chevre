@@ -21,7 +21,6 @@
 @property (assign) IBOutlet NSArray* dates;
 
 - (IBAction) openPreferencesWindow: (id) sender;
-- (IBAction) groupSelection: (id) sender;
 - (IBAction) openPreviewWindow: (id) sender;
 - (NSArray*) getDates;
 
