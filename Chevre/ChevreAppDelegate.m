@@ -63,7 +63,10 @@
         match = [path matchRegex: @".*[0-9]{4}\/[0-9]{2}\/[0-9]{2}"];
         [filename getResourceValue: &isDir forKey: NSURLIsDirectoryKey error: nil];
         if(match && [isDir boolValue] == YES){
-            content = [fm contentsOfDirectoryAtURL: filename includingPropertiesForKeys: nil options: NSDirectoryEnumerationSkipsHiddenFiles error: nil];
+            content = [fm contentsOfDirectoryAtURL: filename 
+                        includingPropertiesForKeys: nil 
+                                           options: NSDirectoryEnumerationSkipsHiddenFiles
+                                             error: nil];
             if( [content count] != 0){
                 [newDates addObject: [NSDictionary dictionaryWithObjectsAndKeys: 
                                       filename, @"url", 
