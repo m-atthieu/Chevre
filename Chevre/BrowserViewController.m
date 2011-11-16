@@ -10,8 +10,17 @@
 
 @implementation BrowserViewController
 
-@synthesize browserView, datasource, directoryPopup, panel, nameTextField, categoryPopup, slider;
+@synthesize browserView; 
+@synthesize datasource;
+@synthesize directoryPopup;
+@synthesize panel;
+@synthesize nameTextField;
+@synthesize categoryPopup;
+@synthesize slider;
+@synthesize undoManager;
 
+#pragma mark -
+#pragma mark Initialization
 - (id) init
 {
     self = [super init];
@@ -23,6 +32,7 @@
             [self setDatasource: tDatasource];
             //[tDatasource release];
         }
+        [self setUndoManager: [[NSUndoManager alloc] init]];
     }
     return self;
 }
@@ -76,7 +86,8 @@
 
 #pragma mark -
 #pragma mark Selection Handling
-- (void) groupSelection
+
+- (IBAction) groupSelection: (id) sender
 {
     if([[browserView selectionIndexes] count] != 0){
         [panel makeKeyAndOrderFront: nil];
@@ -88,10 +99,42 @@
     // TODO ouvrir la fenêtre pour donner les indications de groupe
     NSString* name = [nameTextField stringValue];
     NSString* category = [[categoryPopup selectedItem] title];
-    [datasource addGroupWithName: name andCategory: category withIndex: [browserView selectionIndexes]];
+    [datasource addGroupWithName: name
+                     andCategory: category
+                       withIndex: [browserView selectionIndexes]];
     [panel orderOut: nil];
     [self emptyPanel];
     [browserView reloadData];
+}
+
+- (IBAction) deleteGroupAtSelection: (id) sender
+{
+    // TODO
+    // retreive groups indices matching selection 
+    NSIndexSet* selection = [browserView selectionIndexes];
+    NSIndexSet* groups = [datasource getGroupsIndicesContainingImagesIndices: selection];
+    // remove said groups
+    [datasource removeGroupsAtIndexes: groups];
+    [browserView reloadData];
+}
+
+- (IBAction) ungroupSelection: (id) sender
+{
+    // TODO 
+    // retreive group indices matching selection
+    NSIndexSet* selection = [browserView selectionIndexes];
+    // reduce selection range from start image indice till end of range
+    [datasource ungroupItemAtIndices: selection];
+}
+
+- (IBAction) addSelectionToGroup: (id) sender
+{
+    NSIndexSet* selection = [browserView selectionIndexes];
+    NSIndexSet* groups = [datasource getGroupsIndicesContainingImagesIndices: selection];
+    if([groups count] == 1){
+	Group* group = [datasource getGroupAtIndex: [groups first]];
+	[group addItemsWithIndices: selection];
+    }
 }
 
 - (IBAction) cancelCreateGroup: (id) sender

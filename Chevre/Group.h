@@ -23,4 +23,24 @@
  */
 - (NSDictionary*) asNSDictionnary;
 
+/*!
+ *
+ */
+- (BOOL) containsImageIndex: (NSUInteger) index;
+/*!
+ *
+ */
+- (BOOL) containsImagesIndices: (NSIndexSet*) indices;
+/*!
+ *
+ */
+- (BOOL) containsAll: (NSIndexSet*) indices;
+/*!
+ *
+ */
+- (void) removeItemAtIndices: (NSIndexSet*) indices;
+/*!
+ *
+ */
+- (void) addItemsWithIndices: (NSIndexSet*) indices;
 @end

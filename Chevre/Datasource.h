@@ -30,5 +30,9 @@
 /* Grouping */
 - (void) addGroupWithName: (NSString*) name andCategory: (NSString*) category withIndex: (NSIndexSet*) index;
 - (Group*) getGroupAtIndex: (NSUInteger) index;
+- (void) removeGroupsAtIndexes: (NSIndexSet *) indexes;
+- (NSUInteger) getGroupIndexContainingImageIndex: (NSUInteger) index;
+- (NSIndexSet*) getGroupsIndicesContainingImagesIndices: (NSIndexSet*) indices;
+- (void) ungroupItemAtIndices: (NSIndexSet*) indices;
 
 @end

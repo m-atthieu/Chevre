@@ -88,4 +88,43 @@
     return [groups objectAtIndex: index];
 }
 
+- (NSUInteger) getGroupIndexContainingImageIndex: (NSUInteger) index
+{
+    // TODO
+    // browse through groups and return group index containing said index
+    int i = 0;
+    for(i = 0; i < [groups count]; ++i){
+        if([[groups objectAtIndex: i] containsImageIndex: index]){
+            return i;
+        }
+    }
+    return 0;
+}
+
+- (NSIndexSet*) getGroupsIndicesContainingImagesIndices: (NSIndexSet*) indices
+{
+    // TODO
+    NSMutableIndexSet* indexSet = [[NSMutableIndexSet alloc] init];
+    int i = 0;
+    for(i = 0; i < [groups count]; ++i){
+        if([[groups objectAtIndex: i] containsImagesIndices: indices]){
+            [indexSet addIndex: i];
+        }
+    }
+    return [indexSet autorelease];
+}
+
+- (void) ungroupItemAtIndices: (NSIndexSet*) indices
+{
+    NSIndexSet* local = [self getGroupsIndicesContainingImagesIndices: indices];
+    [local enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
+        Group* group = [groups objectAtIndex: idx];
+	if([group containsAll: indices]){
+	    [groups removeObjectAtIndex: idx];
+	} else {
+	    [group removeItemAtIndices: indices];
+	}
+    }];
+}
+
 @end

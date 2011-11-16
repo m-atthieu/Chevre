@@ -33,11 +33,76 @@
     } else if([category isEqualToString: @"hdr"]){
         color = [NSColor purpleColor];
     }
-    return [NSDictionary dictionaryWithObjectsAndKeys: 
-            [NSNumber numberWithInt: IKGroupBezelStyle], IKImageBrowserGroupStyleKey, 
-            color, IKImageBrowserGroupBackgroundColorKey,
-            [NSString stringWithFormat: @"%@ - %@", name, category], IKImageBrowserGroupTitleKey,
-            [NSValue valueWithRange: range], IKImageBrowserGroupRangeKey, nil];
+    NSDictionary* dict = [NSDictionary dictionaryWithObjectsAndKeys: 
+                          [NSNumber numberWithInt: IKGroupBezelStyle], IKImageBrowserGroupStyleKey, 
+                          color, IKImageBrowserGroupBackgroundColorKey,
+                          [NSString stringWithFormat: @"%@ - %@", name, category], IKImageBrowserGroupTitleKey,
+                          [NSValue valueWithRange: range], IKImageBrowserGroupRangeKey, nil];
+    return dict;
+}
+
+- (BOOL) containsImageIndex: (NSUInteger) index
+{
+    // return [[[NSIndexSet alloc] initWithIndexesInRange: [self range]] containsIndex: index];
+    if(index < ([self range].location + [self range].length)){
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
+- (BOOL) containsImagesIndices: (NSIndexSet*) indices
+{
+    NSIndexSet* local = [[NSIndexSet alloc] initWithIndexesInRange: [self range]];
+    BOOL contains = [local intersectsIndexesInRange: [self range]];
+    [local release];
+    return contains;
+}
+
+- (void) removeItemAtIndices: (NSIndexSet*) indices
+{
+    if([indices intersectsIndexesInRange: [self range]]){
+        NSUInteger intersection[range.length];
+        NSUInteger length = [indices getIndexes: intersection maxCount: range.length inIndexRange: &range];
+	NSUInteger first = intersection[0];
+	NSUInteger last = intersection[length - 1];
+
+	if(first == range.location && last < (range.length + range.location)){
+	    // changer le range.location et range.length
+	    range.location = last + 1;
+	    range.length = range.length - length;
+	} else if(first > range.location && last < (range.location + range.length)){
+	    // changer le range.length
+	    range.length = first - range.location;
+	} else if(first > range.location && last == (range.location + range.length)){
+	    // changer le range.length
+	    range.length = range.length - length;
+	} 
+    }
+}
+
+- (BOOL) containsAll: (NSIndexSet*) indices
+{
+    NSUInteger intersection = [indices countOfIndexesInRange: range];
+    if(range.length == intersection){
+	return YES;
+    } else {
+	return NO;
+    }
+}
+
+- (void) addItemsWithIndices: (NSIndexSet*) indices
+{
+    NSUInteger intersection = [indices countOfIndexesInRange: range];
+    NSUInteger shared[range.length];
+    NSUInteger length = [indices getIndexes: shared maxCount: range.length inIndexRange: &range];
+    
+    if(intersection != 0){
+	range.length = range.length + [indices count] - intersection;
+	if([indices first] < range.location){
+	    range.location = [indices first];
+	}
+    }
 }
 
 @end
