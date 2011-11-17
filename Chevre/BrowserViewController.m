@@ -45,7 +45,7 @@
     [browserView setAllowsReordering: NO];
     [browserView setCellsStyleMask: IKCellsStyleTitled | IKCellsStyleSubtitled];
     
-    [self updateSize: nil];
+    //[self updateSize: nil];
 
     [browserView setDelegate: self];
     [browserView setDataSource: datasource];
@@ -118,7 +118,7 @@
     NSIndexSet* selection = [browserView selectionIndexes];
     NSIndexSet* groups = [datasource getGroupsIndicesContainingImagesIndices: selection];
     // TODO undo
-    [datasource removeGroupsAtIndexes: groups];
+    [datasource removeGroupsAtGroupsIndexes: groups];
     [browserView reloadData];
 }
 
