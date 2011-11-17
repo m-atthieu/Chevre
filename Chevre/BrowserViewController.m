@@ -103,8 +103,12 @@
     // TODO undo
     Group* group = [[Group alloc] initWithName: name andCategory: category withIndex: [browserView selectionIndexes]];
     
-    [[undoManager prepareWithInvocationTarget: self] removeGroup: group];
+    [undoManager beginUndoGrouping];
+    [[undoManager prepareWithInvocationTarget: browserView] reloadData];
+    [[undoManager prepareWithInvocationTarget: datasource] removeGroup: group];
     [undoManager setActionName: @"undo add group"];
+    [undoManager endUndoGrouping];
+    
     [datasource addGroup: group];
     
     [panel orderOut: nil];
