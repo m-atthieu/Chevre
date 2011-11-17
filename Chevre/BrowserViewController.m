@@ -106,7 +106,7 @@
     [undoManager beginUndoGrouping];
     [[undoManager prepareWithInvocationTarget: browserView] reloadData];
     [[undoManager prepareWithInvocationTarget: datasource] removeGroup: group];
-    [undoManager setActionName: @"undo add group"];
+    [undoManager setActionName: @"Add Group"];
     [undoManager endUndoGrouping];
     
     [datasource addGroup: group];
