@@ -140,7 +140,7 @@
 {
     // TODO 
     // add preference for time diff between images
-    NSTimeInterval tolerance = 8;
+    NSTimeInterval tolerance = [[NSUserDefaults standardUserDefaults] integerForKey: @"panoramaDelay"];
     // collect groups indexset
     NSMutableIndexSet* groupsIndexSet = [[NSMutableIndexSet alloc] init];
     for(Group* group in groups){

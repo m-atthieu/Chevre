@@ -11,12 +11,19 @@
 @implementation PreferencesWindowController
 
 @synthesize depot, depotTextField, base, baseTextField, categories;
+@synthesize panoramaDelay;
+@synthesize window;
+@synthesize defaults;
 
 - (id) init
 {
     self = [super initWithWindowNibName: @"PreferencesWindow" owner: self];
     if (self) {
-        NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+        [self setDefaults: [NSUserDefaults standardUserDefaults]];
+	self.panoramaDelay = [defaults integerForKey: @"panoramaDelay"];
+	if(self.panoramaDelay == 0){
+	    self.panoramaDelay = 10;
+	}
         self.depot = [defaults stringForKey: @"depot"];
         self.base = [defaults stringForKey: @"base"];
     }
@@ -26,19 +33,15 @@
 - (void) windowDidLoad
 {
     [super windowDidLoad];
-    
-    // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
 }
 
 - (void) awakeFromNib 
 {
-    if(base != nil){
-        [baseTextField setStringValue: base];
-    }
-    
-    if(depot != nil){
-        [depotTextField setStringValue: depot];
-    }
+    [window setDelegate: self];
+
+    if(base != nil){ [baseTextField setStringValue: base]; }
+    if(depot != nil){ [depotTextField setStringValue: depot]; }
+    [panoramaDelayTextField setIntValue: panoramaDelay];
 }
 
 - (void) browserForField: (NSTextField*) field forKey: (NSString*) key
@@ -50,9 +53,8 @@
     if ( [panel runModal] == NSOKButton ){
         name = [[panel directoryURL] path];
     }
-    [[NSUserDefaults standardUserDefaults] setValue: name forKey: key];
+    [defaults setValue: name forKey: key];
     [field setStringValue: name];
-    
 }
 
 - (IBAction) depotBrowse: (id) sender 
@@ -65,5 +67,14 @@
     [self browserForField: self.baseTextField forKey: @"base"];
 }
 
+#pragma mark - 
+#pragma mark window delegate
+
+- (void) windowWillClose: (NSNotification *) notification
+{
+    // save defaults
+    // paths are already saved
+    [defaults setValue: [panoramaDelayTextField intValue] forKey: @"panoramaDelay"];
+}
 
 @end
