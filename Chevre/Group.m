@@ -13,6 +13,8 @@
 
 @synthesize category, name, range;
 
+#pragma mark -
+#pragma mark Initialization
 - (id) init
 {
     self = [super init];
@@ -21,6 +23,47 @@
     }
     
     return self;
+}
+
+- (id) initWithRange: (NSRange) range
+{
+    self = [self init];
+    [self setRange: range];
+}
+
+#pragma mark - 
+#pragma mark Accessors
+
+- (NSUInteger) start
+{
+    return range.location;
+}
+
+- (void) setStart: (NSUInteger) start
+{
+    range.location = start;
+}
+
+- (NSUInteger) end
+{
+    return (range.location + range.length - 1);
+}
+
+- (void) setEnd: (NSUInteger) end
+{
+    if(end >= range.location){
+	range.length = end - range.location + 1;
+    }
+}
+
+- (NSUInteger) length
+{
+    return range.length;
+}
+
+- (void) setLength: (NSUInteger) length
+{
+    range.length = length;
 }
 
 - (NSDictionary*) asNSDictionnary
@@ -94,14 +137,14 @@
 - (void) addItemsWithIndices: (NSIndexSet*) indices
 {
     NSUInteger intersection = [indices countOfIndexesInRange: range];
-    NSUInteger shared[range.length];
-    NSUInteger length = [indices getIndexes: shared maxCount: range.length inIndexRange: &range];
+    //NSUInteger shared[range.length];
+    //NSUInteger length = [indices getIndexes: shared maxCount: range.length inIndexRange: &range];
     
     if(intersection != 0){
-	range.length = range.length + [indices count] - intersection;
-	if([indices first] < range.location){
-	    range.location = [indices first];
-	}
+        range.length = range.length + [indices count] - intersection;
+        if([indices firstIndex] < range.location){
+            range.location = [indices firstIndex];
+        }
     }
 }
 

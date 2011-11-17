@@ -24,5 +24,6 @@
 - (NSString *) imageSubtitle;
 - (NSString *) imageTitle;
 - (NSString *) imageUID;
+- (NSTimeInterval) dateAsSeconds;
 
 @end

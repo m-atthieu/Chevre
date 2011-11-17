@@ -117,14 +117,56 @@
 - (void) ungroupItemAtIndices: (NSIndexSet*) indices
 {
     NSIndexSet* local = [self getGroupsIndicesContainingImagesIndices: indices];
-    [local enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
+    [local enumerateIndexesUsingBlock: ^(NSUInteger idx, BOOL *stop) {
         Group* group = [groups objectAtIndex: idx];
-	if([group containsAll: indices]){
-	    [groups removeObjectAtIndex: idx];
-	} else {
-	    [group removeItemAtIndices: indices];
-	}
+        if([group containsAll: indices]){
+            [groups removeObjectAtIndex: idx];
+        } else {
+            [group removeItemAtIndices: indices];
+        }
     }];
+}
+
+- (NSArray*) detectPanoramas
+{
+    // TODO 
+    // add preference for time diff between images
+    NSTimeInterval tolerance = 8;
+    // collect groups indexset
+    NSMutableIndexSet* groupsIndexSet = [[NSMutableIndexSet alloc] init];
+    for(Group* group in groups){
+        [groupsIndexSet addIndexesInRange: [group range]];
+    }
+    NSMutableArray* panoramas = [[NSMutableArray alloc] init];
+    NSUInteger n = [images count];
+    NSUInteger times[n];
+    Group* current_group = nil;
+    // browse all images
+    int i = 0;
+    times[0] = 0;
+    for(i = 1; i < [images count]; ++i){
+        times[i] = [[images objectAtIndex: (i - 1)] dateAsSeconds] - [[images objectAtIndex: i] dateAsSeconds];
+        if(times[i] > tolerance){
+	    if(current_group != nil){
+		[panoramas addObject: current_group];
+		[current_group release];
+	    }
+        } else { // if(times[i] <= tolerance){
+	    if(! [groupsIndexSet containsIndex: i] && ! [groupsIndexSet containsIndex: (i - 1)]){
+		if(current_group == nil){
+		    current_group = [[Group alloc] initWithRange: NSMakeRange((i - 1), 2)];
+		    [current_group setCategory: @"pano"];
+		    [current_group setName: @""];
+		} else {
+		    [current_group setLength: [current_group length] + 1];
+		}
+	    }
+	}
+    }
+    [groups addObjectsFromArray: panoramas];
+    
+    [groupsIndexSet release];
+    return [panoramas autorelease];
 }
 
 @end

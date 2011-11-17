@@ -14,6 +14,18 @@
 @property (retain) NSString* category;
 @property NSRange range;
 
+- (id) init;
+- (id) initWithRange: (NSRange) range;
+
+- (NSUInteger) start;
+- (void) setStart: (NSUInteger) start;
+
+- (NSUInteger) end;
+- (void) setEnd: (NSUInteger) end;
+
+- (NSUInteger) length;
+- (void) setLength: (NSUInteger) length;
+
 /*
  * Dictionnary keys :
  * - IKImageBrowserGroupStyle

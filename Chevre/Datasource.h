@@ -34,5 +34,6 @@
 - (NSUInteger) getGroupIndexContainingImageIndex: (NSUInteger) index;
 - (NSIndexSet*) getGroupsIndicesContainingImagesIndices: (NSIndexSet*) indices;
 - (void) ungroupItemAtIndices: (NSIndexSet*) indices;
+- (NSArray*) detectPanoramas;
 
 @end
