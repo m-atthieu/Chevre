@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4342E11714753274000C3628 /* ImageBrowserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4342E11614753274000C3628 /* ImageBrowserView.m */; };
 		43802A6D1411B5800004F585 /* PreviewWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43802A6C1411B5800004F585 /* PreviewWindow.xib */; };
 		43802A701411B6050004F585 /* PreviewWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43802A6F1411B6050004F585 /* PreviewWindowController.m */; };
 		4381F73214138F1F0099C263 /* NSString+regex.m in Sources */ = {isa = PBXBuildFile; fileRef = 4381F73114138F1F0099C263 /* NSString+regex.m */; };
@@ -26,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4342E11514753273000C3628 /* ImageBrowserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageBrowserView.h; sourceTree = "<group>"; };
+		4342E11614753274000C3628 /* ImageBrowserView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageBrowserView.m; sourceTree = "<group>"; };
 		43802A6C1411B5800004F585 /* PreviewWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreviewWindow.xib; sourceTree = "<group>"; };
 		43802A6E1411B6050004F585 /* PreviewWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreviewWindowController.h; sourceTree = "<group>"; };
 		43802A6F1411B6050004F585 /* PreviewWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreviewWindowController.m; sourceTree = "<group>"; };
@@ -148,6 +151,8 @@
 		43F9227314103261001E1D36 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				4342E11514753273000C3628 /* ImageBrowserView.h */,
+				4342E11614753274000C3628 /* ImageBrowserView.m */,
 				43E92E42140F627800A54E6C /* MainMenu.xib */,
 				43E92E3F140F627800A54E6C /* ChevreAppDelegate.h */,
 				43E92E40140F627800A54E6C /* ChevreAppDelegate.m */,
@@ -234,6 +239,7 @@
 				43F92276141036CA001E1D36 /* BrowserViewController.m in Sources */,
 				43802A701411B6050004F585 /* PreviewWindowController.m in Sources */,
 				4381F73214138F1F0099C263 /* NSString+regex.m in Sources */,
+				4342E11714753274000C3628 /* ImageBrowserView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
