@@ -15,6 +15,7 @@
 @implementation Datasource
 
 @synthesize groups, images;
+@synthesize undoManager;
 
 - (id) initWithURL: (NSURL *) anURL
 {
@@ -126,8 +127,10 @@
     [local enumerateIndexesUsingBlock: ^(NSUInteger idx, BOOL *stop) {
         Group* group = [groups objectAtIndex: idx];
         if([group containsAll: indices]){
+	    // TODO undo
             [groups removeObjectAtIndex: idx];
         } else {
+	    // TODO undo
             [group removeItemAtIndices: indices];
         }
     }];
@@ -161,7 +164,7 @@
             [current_group release];
             current_group = nil;
 	    }
-        } else { // if(times[i] <= tolerance){
+        } else {
 	    if(! [groupsIndexSet containsIndex: i] && ! [groupsIndexSet containsIndex: (i - 1)]){
 		if(current_group == nil){
 		    //current_group = [[Group alloc] initWithRange: NSMakeRange((i - 1), 2)];
@@ -175,6 +178,7 @@
 	    }
 	}
     }
+    // TODO undo
     [groups addObjectsFromArray: panoramas];
     
     [groupsIndexSet release];

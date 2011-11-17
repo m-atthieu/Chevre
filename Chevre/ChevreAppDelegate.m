@@ -21,6 +21,12 @@
     dates = [self getDates];
 }
 
+- (void) awakeFromNib
+{
+    // never passes through here
+    [browserViewController setUndoManager: [[window firstResponder] undoManager]];
+}
+
 - (IBAction) openPreferencesWindow: (id) sender
 {
     NSWindowController* wc = [[PreferencesWindowController alloc] init];
@@ -77,19 +83,10 @@
 {
     NSURL* url = [[datesController selection] valueForKey: @"url"];
     Datasource* datasource = [[Datasource alloc] initWithURL: url];
+    NSUndoManager* undoManager = [[window firstResponder] undoManager];
+    [datasource setUndoManager: undoManager];
     [browserViewController updateDatasource: datasource];
     [datasource release];
-}
-
-
-- (IBAction) ungroupSelection: (id) sender
-{
-    // TODO
-}
-
-- (IBAction) deleteGroupAtSelection: (id)sender
-{
-    // TODO
 }
 
 @end

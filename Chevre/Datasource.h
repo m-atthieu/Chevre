@@ -15,6 +15,7 @@
 
 @property (retain) NSMutableArray* groups;
 @property (retain) NSMutableArray* images;
+@property (retain) NSUndoManager* undoManager;
 
 #pragma mark -
 #pragma mark Initialization

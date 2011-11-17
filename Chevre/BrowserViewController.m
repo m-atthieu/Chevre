@@ -33,7 +33,6 @@
             NSURL* url = [NSURL URLWithString: depot];
             Datasource* tDatasource = [[Datasource alloc] initWithURL: url];
             [self setDatasource: tDatasource];
-            //[tDatasource release];
         }
         [self setUndoManager: [[NSUndoManager alloc] init]];
     }
@@ -99,9 +98,9 @@
 
 - (IBAction) createGroup: (id) sender
 {
-    // TODO ouvrir la fenêtre pour donner les indications de groupe
     NSString* name = [nameTextField stringValue];
     NSString* category = [[categoryPopup selectedItem] title];
+    // TODO undo
     [datasource addGroupWithName: name
                      andCategory: category
                        withIndex: [browserView selectionIndexes]];
@@ -112,11 +111,10 @@
 
 - (IBAction) deleteGroupAtSelection: (id) sender
 {
-    // TODO
     // retreive groups indices matching selection 
     NSIndexSet* selection = [browserView selectionIndexes];
     NSIndexSet* groups = [datasource getGroupsIndicesContainingImagesIndices: selection];
-    // remove said groups
+    // TODO undo
     [datasource removeGroupsAtIndexes: groups];
     [browserView reloadData];
 }
@@ -127,6 +125,7 @@
     // retreive group indices matching selection
     NSIndexSet* selection = [browserView selectionIndexes];
     // reduce selection range from start image indice till end of range
+    // TODO undo
     [datasource ungroupItemAtIndices: selection];
 }
 
@@ -136,6 +135,7 @@
     NSIndexSet* groups = [datasource getGroupsIndicesContainingImagesIndices: selection];
     if([groups count] == 1){
 	Group* group = [datasource getGroupAtIndex: [groups firstIndex]];
+	// TODO undo
 	[group addItemsWithIndices: selection];
     }
 }
@@ -168,6 +168,7 @@
     NSIndexSet* selection = [browserView selectionIndexes];
     NSUInteger groupIndex = [selection firstIndex];
     Group* group = [datasource getGroupContainingImageIndex: groupIndex];
+    // TODO undo
     [group setName: [editNextField stringValue]];
     [group setCategory: [[editCategoryPopup selectedItem] title]]
     [editPanel orderOut: nil];
