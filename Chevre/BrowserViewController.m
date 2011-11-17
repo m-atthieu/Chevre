@@ -132,7 +132,7 @@
     NSIndexSet* selection = [browserView selectionIndexes];
     NSIndexSet* groups = [datasource getGroupsIndicesContainingImagesIndices: selection];
     if([groups count] == 1){
-	Group* group = [datasource getGroupAtIndex: [groups first]];
+	Group* group = [datasource getGroupAtIndex: [groups firstIndex]];
 	[group addItemsWithIndices: selection];
     }
 }
@@ -166,6 +166,13 @@
 {
     CGFloat size = [slider floatValue] / 256;
     [browserView setZoomValue: size];
+}
+
+- (IBAction) detectPanoramas: (id) sender
+{
+    // TODO submit acceptance ?
+    [datasource detectPanoramas];
+    [browserView reloadData];
 }
 
 @end

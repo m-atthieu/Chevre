@@ -81,5 +81,6 @@
  *
  */
 - (void) ungroupItemAtIndices: (NSIndexSet*) indices;
+- (NSArray*) detectPanoramas;
 
 @end

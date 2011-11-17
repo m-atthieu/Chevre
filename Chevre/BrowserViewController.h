@@ -59,6 +59,10 @@
  *
  */
 - (IBAction) addSelectionToGroup: (id) sender;
+/*!
+ *
+ */
+- (IBAction) detectPanoramas: (id) sender;
 
 
 /*!

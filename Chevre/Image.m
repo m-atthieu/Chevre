@@ -76,5 +76,13 @@
     //NSLog(@"exif : %@ : %@", date, time);
 }
 
+- (NSTimeInterval) dateAsSeconds
+{
+    // since I consider I can not have two pictures taken the same day athe same 
+    // time with two different timezone...
+    //NSDate* _date = [NSDate dateWithString: [NSString stringWithFormat: @"%@ %@ +0100", date, time]];
+    NSDate* _date = [NSDate dateWithNaturalLanguageString: [NSString stringWithFormat: @"%@ %@", date, time]];
+    return [_date timeIntervalSince1970];
+}
 
 @end

@@ -76,7 +76,9 @@
 - (IBAction) changeDate: (id) sender
 {
     NSURL* url = [[datesController selection] valueForKey: @"url"];
-    [browserViewController updateDatasource: [[Datasource alloc] initWithURL: url]];
+    Datasource* datasource = [[Datasource alloc] initWithURL: url];
+    [browserViewController updateDatasource: datasource];
+    [datasource release];
 }
 
 
