@@ -185,4 +185,14 @@
     return [panoramas autorelease];
 }
 
+- (void) addGroup: (Group*) group
+{
+    [groups addObject: group];
+}
+
+- (void) removeGroup: (Group*) group
+{
+    [groups removeObject: group];
+}
+
 @end

@@ -101,9 +101,12 @@
     NSString* name = [nameTextField stringValue];
     NSString* category = [[categoryPopup selectedItem] title];
     // TODO undo
-    [datasource addGroupWithName: name
-                     andCategory: category
-                       withIndex: [browserView selectionIndexes]];
+    Group* group = [[Group alloc] initWithName: name andCategory: category withIndex: [browserView selectionIndexes]];
+    
+    [[undoManager prepareWithInvocationTarget: self] removeGroup: group];
+    [undoManager setActionName: @"undo add group"];
+    [datasource addGroup: group];
+    
     [panel orderOut: nil];
     [self emptyPanel];
     [browserView reloadData];
@@ -169,8 +172,8 @@
     NSUInteger groupIndex = [selection firstIndex];
     Group* group = [datasource getGroupContainingImageIndex: groupIndex];
     // TODO undo
-    [group setName: [editNextField stringValue]];
-    [group setCategory: [[editCategoryPopup selectedItem] title]]
+    [group setName: [editNameTextField stringValue]];
+    [group setCategory: [[editCategoryPopup selectedItem] title]];
     [editPanel orderOut: nil];
 }
 

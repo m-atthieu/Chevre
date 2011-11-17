@@ -16,6 +16,7 @@
 
 - (id) init;
 - (id) initWithRange: (NSRange) range;
+- (id) initWithName: (NSString*) name andCategory: (NSString*) category withIndex: (NSIndexSet*) indexes;
 
 - (NSUInteger) start;
 - (void) setStart: (NSUInteger) start;

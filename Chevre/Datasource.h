@@ -83,5 +83,7 @@
  */
 - (void) ungroupItemAtIndices: (NSIndexSet*) indices;
 - (NSArray*) detectPanoramas;
+- (void) addGroup: (Group*) group;
+- (void) removeGroup: (Group*) group;
 
 @end
