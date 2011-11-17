@@ -18,6 +18,9 @@
 @synthesize categoryPopup;
 @synthesize slider;
 @synthesize undoManager;
+@synthesize editPanel;
+@synthesize editNameTextField;
+@synthesize editCategoryPopup;
 
 #pragma mark -
 #pragma mark Initialization
@@ -149,9 +152,25 @@
     NSIndexSet* selection = [browserView selectionIndexes];
     NSUInteger groupIndex = [selection firstIndex];
     Group* group = [datasource getGroupContainingImageIndex: groupIndex];
-    [nameTextField setStringValue: [group name]];
+    [editNameTextField setStringValue: [group name]];
     // TODO : select group category
-    //[panel makeKeyAndOrderFront: nil];
+    int i = 0;
+    for(i = 0; i < [editCategoryPopup numberOfItems]; ++i){
+	if([[[editCategoryPopup itemAtIndex: i] title] isEqualToString: [group category]]){
+	    [editCategoryPopup selectItemAtIndex: i];
+	}
+    }
+    [editPanel makeKeyAndOrderFront: nil];
+}
+
+- (IBAction) editGroup: (id) sender
+{
+    NSIndexSet* selection = [browserView selectionIndexes];
+    NSUInteger groupIndex = [selection firstIndex];
+    Group* group = [datasource getGroupContainingImageIndex: groupIndex];
+    [group setName: [editNextField stringValue]];
+    [group setCategory: [[editCategoryPopup selectedItem] title]]
+    [editPanel orderOut: nil];
 }
 
 - (void) emptyPanel

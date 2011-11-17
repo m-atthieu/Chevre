@@ -477,7 +477,7 @@
 									<reference key="NSOnImage" ref="35465992"/>
 									<reference key="NSMixedImage" ref="502551668"/>
 								</object>
-								<object class="NSMenuItem" id="369380772">
+								<object class="NSMenuItem" id="351467691">
 									<reference key="NSMenu" ref="789758025"/>
 									<bool key="NSIsDisabled">YES</bool>
 									<bool key="NSIsSeparator">YES</bool>
@@ -487,7 +487,7 @@
 									<reference key="NSOnImage" ref="35465992"/>
 									<reference key="NSMixedImage" ref="502551668"/>
 								</object>
-								<object class="NSMenuItem" id="937697302">
+								<object class="NSMenuItem" id="393966592">
 									<reference key="NSMenu" ref="789758025"/>
 									<string key="NSTitle">Detect Panoramas</string>
 									<string key="NSKeyEquiv"/>
@@ -2639,9 +2639,25 @@
 					<object class="IBActionConnection" key="connection">
 						<string key="label">detectPanoramas:</string>
 						<reference key="source" ref="85001360"/>
-						<reference key="destination" ref="937697302"/>
+						<reference key="destination" ref="393966592"/>
 					</object>
 					<int key="connectionID">623</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">deleteGroupAtSelection:</string>
+						<reference key="source" ref="85001360"/>
+						<reference key="destination" ref="744912470"/>
+					</object>
+					<int key="connectionID">624</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">ungroupSelection:</string>
+						<reference key="source" ref="85001360"/>
+						<reference key="destination" ref="308209367"/>
+					</object>
+					<int key="connectionID">625</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -2835,8 +2851,8 @@
 							<reference ref="166197316"/>
 							<reference ref="744912470"/>
 							<reference ref="308209367"/>
-							<reference ref="369380772"/>
-							<reference ref="937697302"/>
+							<reference ref="351467691"/>
+							<reference ref="393966592"/>
 						</object>
 						<reference key="parent" ref="952259628"/>
 					</object>
@@ -3931,12 +3947,12 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">621</int>
-						<reference key="object" ref="369380772"/>
+						<reference key="object" ref="351467691"/>
 						<reference key="parent" ref="789758025"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">622</int>
-						<reference key="object" ref="937697302"/>
+						<reference key="object" ref="393966592"/>
 						<reference key="parent" ref="789758025"/>
 					</object>
 				</object>
@@ -4359,7 +4375,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">623</int>
+			<int key="maxID">625</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">

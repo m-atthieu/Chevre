@@ -20,10 +20,14 @@
 @property (assign) IBOutlet NSPopUpButton* directoryPopup;
 @property (assign) IBOutlet NSSlider* slider;
 
-/* HUDWindow */
+/* create group HUDWindow */
 @property (assign) IBOutlet NSPanel* panel;
 @property (assign) IBOutlet NSTextField* nameTextField;
 @property (assign) IBOutlet NSPopUpButton* categoryPopup;
+/* edit group HUDWindow */
+@property (assign) IBOutlet NSPanel* editPanel;
+@property (assign) IBOutlet NSTextField* editNameTextField;
+@property (assign) IBOutlet NSPopUpButton* editCategoryPopup;
 
 @property (assign) NSUndoManager* undoManager;
 
@@ -55,6 +59,7 @@
  * callback for editing 
  */
 - (IBAction) editGroupAtSelection: (id) sender;
+- (IBAction) editGroup: (id) sender;
 /*!
  *
  */

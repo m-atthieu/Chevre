@@ -14,7 +14,9 @@
 
 - (void) magnifyWithEvent:(NSEvent *) event
 {
+    //NSLog(@"zooming");
     [self setZoomValue: [self zoomValue] + [event magnification]];
+    [self setNeedsDisplay: YES];
 }
 
 @end
