@@ -10,12 +10,13 @@
 #import <Quartz/Quartz.h>
 
 #import "Datasource.h"
+#import "ImageBrowserView.h"
 
 @interface BrowserViewController : NSObject
 
 @property (retain) Datasource* datasource;
 
-@property (assign) IBOutlet IKImageBrowserView* browserView;
+@property (assign) IBOutlet ImageBrowserView* browserView;
 @property (assign) IBOutlet NSPopUpButton* directoryPopup;
 @property (assign) IBOutlet NSSlider* slider;
 
