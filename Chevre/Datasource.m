@@ -164,7 +164,7 @@
         NSUInteger time_i_1 = [[images objectAtIndex: (i - 1)] dateAsSeconds];
         NSUInteger time_i = [[images objectAtIndex: i] dateAsSeconds];
         times[i] = time_i - time_i_1;
-        NSLog(@"times[%d] : %lu", i, times[i]);
+        //NSLog(@"times[%d] : %lu", i, times[i]);
         if(times[i] > tolerance){
 	    if(current_group != nil){
             [panoramas addObject: current_group];

@@ -153,6 +153,11 @@
     [self emptyPanel];
 }
 
+- (IBAction) cancelEditGroup: (id) sender
+{
+    [editPanel orderOut: nil];
+}
+
 - (IBAction) editGroupAtSelection: (id) sender
 {
     // WARNING : I only take the group under the first selected item
@@ -179,6 +184,7 @@
     [group setName: [editNameTextField stringValue]];
     [group setCategory: [[editCategoryPopup selectedItem] title]];
     [editPanel orderOut: nil];
+    [browserView reloadData];
 }
 
 - (void) emptyPanel

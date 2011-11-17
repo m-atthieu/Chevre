@@ -44,6 +44,10 @@
  */
 - (IBAction) cancelCreateGroup: (id) sender;
 /*!
+ * callback when cancelling creating a group, called by HUD panel
+ */
+- (IBAction) cancelEditGroup: (id) sender;
+/*!
  * update the size of the thumbnails
  */
 - (IBAction) updateSize: (id) sender;
