@@ -65,7 +65,7 @@
 /*!
  *
  */
-- (void) removeGroupsAtIndexes: (NSIndexSet *) indexes;
+- (void) removeGroupsAtGroupsIndexes: (NSIndexSet *) indexes;
 /*!
  *
  */

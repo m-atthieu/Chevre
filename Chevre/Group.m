@@ -107,9 +107,9 @@
 
 - (BOOL) containsImagesIndices: (NSIndexSet*) indices
 {
-    NSIndexSet* local = [[NSIndexSet alloc] initWithIndexesInRange: [self range]];
-    BOOL contains = [local intersectsIndexesInRange: [self range]];
-    [local release];
+    //NSIndexSet* local = [[NSIndexSet alloc] initWithIndexesInRange: [self range]];
+    BOOL contains = [indices intersectsIndexesInRange: [self range]];
+    //[local release];
     return contains;
 }
 

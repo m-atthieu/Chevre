@@ -121,6 +121,13 @@
     return [indexSet autorelease];
 }
 
+- (void) removeGroupsAtGroupsIndexes:(NSIndexSet *)indexes
+{
+    [indexes enumerateIndexesUsingBlock: ^(NSUInteger idx, BOOL *stop) {
+        [groups removeObjectAtIndex: idx];
+    }];
+}
+
 - (void) ungroupItemAtIndices: (NSIndexSet*) indices
 {
     NSIndexSet* local = [self getGroupsIndicesContainingImagesIndices: indices];
