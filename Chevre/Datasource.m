@@ -101,6 +101,12 @@
     return 0;
 }
 
+- (Group*) getGroupContainingImageIndex: (NSUInteger) index
+{
+    NSUInteger idx = [self getGroupIndexContainingImageIndex: index];
+    return [self getGroupAtIndex: idx];
+}
+
 - (NSIndexSet*) getGroupsIndicesContainingImagesIndices: (NSIndexSet*) indices
 {
     // TODO

@@ -143,6 +143,17 @@
     [self emptyPanel];
 }
 
+- (IBAction) editGroupAtSelection: (id) sender
+{
+    // WARNING : I only take the group under the first selected item
+    NSIndexSet* selection = [browserView selectionIndexes];
+    NSUInteger groupIndex = [selection firstIndex];
+    Group* group = [datasource getGroupContainingImageIndex: groupIndex];
+    [nameTextField setStringValue: [group name]];
+    // TODO : select group category
+    //[panel makeKeyAndOrderFront: nil];
+}
+
 - (void) emptyPanel
 {
     // TODO ? option pour reseter le nom ?
