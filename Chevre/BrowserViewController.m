@@ -161,6 +161,7 @@
 {
     // TODO submit acceptance ?
     [datasource detectPanoramas];
+    [browserView reloadData];
 }
 
 @end

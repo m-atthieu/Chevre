@@ -145,16 +145,22 @@
     int i = 0;
     times[0] = 0;
     for(i = 1; i < [images count]; ++i){
-        times[i] = [[images objectAtIndex: (i - 1)] dateAsSeconds] - [[images objectAtIndex: i] dateAsSeconds];
+        NSUInteger time_i_1 = [[images objectAtIndex: (i - 1)] dateAsSeconds];
+        NSUInteger time_i = [[images objectAtIndex: i] dateAsSeconds];
+        times[i] = time_i - time_i_1;
+        NSLog(@"times[%d] : %lu", i, times[i]);
         if(times[i] > tolerance){
 	    if(current_group != nil){
-		[panoramas addObject: current_group];
-		[current_group release];
+            [panoramas addObject: current_group];
+            [current_group release];
+            current_group = nil;
 	    }
         } else { // if(times[i] <= tolerance){
 	    if(! [groupsIndexSet containsIndex: i] && ! [groupsIndexSet containsIndex: (i - 1)]){
 		if(current_group == nil){
-		    current_group = [[Group alloc] initWithRange: NSMakeRange((i - 1), 2)];
+		    //current_group = [[Group alloc] initWithRange: NSMakeRange((i - 1), 2)];
+            current_group = [[Group alloc] init];
+            [current_group setRange: NSMakeRange((i - 1), 2)];
 		    [current_group setCategory: @"pano"];
 		    [current_group setName: @""];
 		} else {
