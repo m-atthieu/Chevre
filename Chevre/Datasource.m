@@ -185,6 +185,7 @@
 	    }
 	}
     }
+    [current_group release];
     // TODO undo
     [groups addObjectsFromArray: panoramas];
     
