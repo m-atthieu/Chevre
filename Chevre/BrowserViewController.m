@@ -141,9 +141,10 @@
     NSIndexSet* selection = [browserView selectionIndexes];
     NSIndexSet* groups = [datasource getGroupsIndicesContainingImagesIndices: selection];
     if([groups count] == 1){
-	Group* group = [datasource getGroupAtIndex: [groups firstIndex]];
-	// TODO undo
-	[group addItemsWithIndices: selection];
+        Group* group = [datasource getGroupAtIndex: [groups firstIndex]];
+        // TODO undo
+        [group addItemsWithIndices: selection];
+        [browserView reloadData];
     }
 }
 

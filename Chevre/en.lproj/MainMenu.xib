@@ -426,8 +426,7 @@
 								<object class="NSMenuItem" id="583158037">
 									<reference key="NSMenu" ref="789758025"/>
 									<string key="NSTitle">Select All</string>
-									<string key="NSKeyEquiv">a</string>
-									<int key="NSKeyEquivModMask">1048576</int>
+									<string key="NSKeyEquiv"/>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="35465992"/>
 									<reference key="NSMixedImage" ref="502551668"/>
@@ -1556,7 +1555,6 @@
 									<string key="NSFrame">{{1, 458}, {558, 15}}</string>
 									<reference key="NSSuperview" ref="358232372"/>
 									<reference key="NSWindow"/>
-									<reference key="NSNextKeyView"/>
 									<int key="NSsFlags">1</int>
 									<reference key="NSTarget" ref="358232372"/>
 									<string key="NSAction">_doScroller:</string>
@@ -1743,7 +1741,6 @@
 							<string key="NSFrame">{{161, 19}, {51, 19}}</string>
 							<reference key="NSSuperview" ref="36985900"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="303546291">
 								<int key="NSCellFlags">-2080244224</int>
@@ -1886,7 +1883,6 @@
 							<string key="NSFrame">{{164, 19}, {48, 20}}</string>
 							<reference key="NSSuperview" ref="779962827"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="280233262">
 								<int key="NSCellFlags">-2080244224</int>
