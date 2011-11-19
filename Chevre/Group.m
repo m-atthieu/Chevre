@@ -119,21 +119,22 @@
 {
     if([indices intersectsIndexesInRange: [self range]]){
         NSUInteger intersection[range.length];
-        NSUInteger length = [indices getIndexes: intersection maxCount: range.length inIndexRange: &range];
-	NSUInteger first = intersection[0];
-	NSUInteger last = intersection[length - 1];
+        NSRange rangeCopy = NSMakeRange(range.location, range.length);
+        NSUInteger length = [indices getIndexes: intersection maxCount: range.length inIndexRange: &rangeCopy];
+        NSUInteger first = intersection[0];
+        NSUInteger last = intersection[length - 1];
 
-	if(first == range.location && last < (range.length + range.location)){
-	    // changer le range.location et range.length
-	    range.location = last + 1;
-	    range.length = range.length - length;
-	} else if(first > range.location && last < (range.location + range.length)){
-	    // changer le range.length
-	    range.length = first - range.location;
-	} else if(first > range.location && last == (range.location + range.length)){
-	    // changer le range.length
-	    range.length = range.length - length;
-	} 
+        if(first == range.location && last < (range.length + range.location)){
+            // changer le range.location et range.length
+            range.location = last + 1;
+            range.length = range.length - length;
+        } else if(first > range.location && last < (range.location + range.length)){
+            // changer le range.length
+            range.length = first - range.location;
+        } else if(first > range.location && last == (range.location + range.length)){
+            // changer le range.length
+            range.length = range.length - length;
+        } 
     }
 }
 
