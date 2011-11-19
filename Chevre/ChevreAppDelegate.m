@@ -29,13 +29,14 @@
 - (IBAction) openPreferencesWindow: (id) sender
 {
     NSWindowController* wc = [[PreferencesWindowController alloc] init];
-    [wc showWindow: sender];
+    [wc showWindow: self];
+    //[wc autorelease];
 }
 
 - (IBAction) openPreviewWindow: (id) sender
 {
     NSWindowController* wc = [[PreviewWindowController alloc] initWithDatasource: [browserViewController datasource]];
-    [wc showWindow: sender];
+    [wc showWindow: self];
 }
 
 

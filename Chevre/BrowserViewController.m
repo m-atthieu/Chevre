@@ -28,7 +28,8 @@
 {
     self = [super init];
     if (self) {
-        [self setUndoManager: [[NSUndoManager alloc] init]];
+        // undo manager get set by the window controller
+        //[self setUndoManager: [[NSUndoManager alloc] init]];
 
         NSString* depot = [[NSUserDefaults standardUserDefaults] valueForKey: @"depot"];
         if(depot != nil){
@@ -36,6 +37,7 @@
             Datasource* tDatasource = [[Datasource alloc] initWithURL: url];
             [tDatasource setUndoManager: [self undoManager]];
             [self setDatasource: tDatasource];
+            [tDatasource release];
         }
         
     }
@@ -69,6 +71,7 @@
 - (void) dealloc
 {
     [datasource release];
+    [undoManager release];
     [super dealloc];
 }
 
@@ -114,7 +117,7 @@
     [undoManager endUndoGrouping];
     
     [datasource addGroup: group];
-    
+    [group release];
     [panel orderOut: nil];
     [self emptyPanel];
     [browserView reloadData];

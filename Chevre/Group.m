@@ -79,7 +79,8 @@
 
 - (NSDictionary*) asNSDictionnary
 {
-    NSColor* color;
+    NSColor* color = [NSColor grayColor];
+    
     if([category isEqualToString: @"photo"]){
         color = [NSColor yellowColor];
     } else if([category isEqualToString: @"pano"]){
@@ -87,6 +88,7 @@
     } else if([category isEqualToString: @"hdr"]){
         color = [NSColor purpleColor];
     }
+    
     NSDictionary* dict = [NSDictionary dictionaryWithObjectsAndKeys: 
                           [NSNumber numberWithInt: IKGroupBezelStyle], IKImageBrowserGroupStyleKey, 
                           color, IKImageBrowserGroupBackgroundColorKey,
