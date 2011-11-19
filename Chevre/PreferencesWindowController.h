@@ -8,9 +8,9 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface PreferencesWindowController : NSWindowController
+@interface PreferencesWindowController : NSWindowController <NSWindowDelegate>
 
-@property (retain) IBOutlet NSWindow* window;
+//@property (retain) IBOutlet NSWindow* window;
 @property (assign) IBOutlet NSTextField* baseTextField;
 @property (assign) IBOutlet NSTextField* depotTextField;
 @property (retain) IBOutlet NSMutableArray* categories;

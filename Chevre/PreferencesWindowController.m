@@ -12,7 +12,8 @@
 
 @synthesize depot, depotTextField, base, baseTextField, categories;
 @synthesize panoramaDelay;
-@synthesize window;
+@synthesize panoramaDelayTextField;
+//@synthesize window;
 @synthesize defaults;
 
 - (id) init
@@ -20,7 +21,7 @@
     self = [super initWithWindowNibName: @"PreferencesWindow" owner: self];
     if (self) {
         [self setDefaults: [NSUserDefaults standardUserDefaults]];
-	self.panoramaDelay = [defaults integerForKey: @"panoramaDelay"];
+        self.panoramaDelay = [defaults integerForKey: @"panoramaDelay"];
 	if(self.panoramaDelay == 0){
 	    self.panoramaDelay = 10;
 	}
@@ -33,15 +34,14 @@
 - (void) windowDidLoad
 {
     [super windowDidLoad];
+    //[window setDelegate: self];
 }
 
 - (void) awakeFromNib 
 {
-    [window setDelegate: self];
-
     if(base != nil){ [baseTextField setStringValue: base]; }
     if(depot != nil){ [depotTextField setStringValue: depot]; }
-    [panoramaDelayTextField setIntValue: panoramaDelay];
+    [panoramaDelayTextField setIntegerValue: panoramaDelay];
 }
 
 - (void) browserForField: (NSTextField*) field forKey: (NSString*) key
@@ -74,7 +74,8 @@
 {
     // save defaults
     // paths are already saved
-    [defaults setValue: [panoramaDelayTextField intValue] forKey: @"panoramaDelay"];
+    NSNumber* delay = [NSNumber numberWithInt: [panoramaDelayTextField intValue]];
+    [defaults setValue: delay forKey: @"panoramaDelay"];
 }
 
 @end
