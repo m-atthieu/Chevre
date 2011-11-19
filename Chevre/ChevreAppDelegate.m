@@ -23,7 +23,6 @@
 
 - (void) awakeFromNib
 {
-    // never passes through here
     [browserViewController setUndoManager: [[window firstResponder] undoManager]];
 }
 
