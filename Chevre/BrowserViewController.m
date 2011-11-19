@@ -134,6 +134,7 @@
     // reduce selection range from start image indice till end of range
     // TODO undo
     [datasource ungroupItemAtIndices: selection];
+    [browserView reloadData];
 }
 
 - (IBAction) addSelectionToGroup: (id) sender
