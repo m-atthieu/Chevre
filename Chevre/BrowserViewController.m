@@ -28,13 +28,16 @@
 {
     self = [super init];
     if (self) {
+        [self setUndoManager: [[NSUndoManager alloc] init]];
+
         NSString* depot = [[NSUserDefaults standardUserDefaults] valueForKey: @"depot"];
         if(depot != nil){
             NSURL* url = [NSURL URLWithString: depot];
             Datasource* tDatasource = [[Datasource alloc] initWithURL: url];
+            [tDatasource setUndoManager: [self undoManager]];
             [self setDatasource: tDatasource];
         }
-        [self setUndoManager: [[NSUndoManager alloc] init]];
+        
     }
     return self;
 }
@@ -57,6 +60,7 @@
 - (void) updateDatasource: (Datasource*) aDatasource
 {
     [datasource release];
+    [aDatasource setUndoManager: [self undoManager]];
     [self setDatasource: aDatasource];
     [browserView setDataSource: aDatasource];
     [browserView reloadData];
@@ -206,7 +210,13 @@
 - (IBAction) detectPanoramas: (id) sender
 {
     // TODO submit acceptance ?
-    [datasource detectPanoramas];
+    [undoManager beginUndoGrouping];
+    [[undoManager prepareWithInvocationTarget: browserView] reloadData];
+
+    NSArray* added = [datasource detectPanoramas];
+    [[undoManager prepareWithInvocationTarget: datasource] removeGroups: added];
+    [undoManager setActionName: @"Detect panoramas"];
+    [undoManager endUndoGrouping];
     [browserView reloadData];
 }
 

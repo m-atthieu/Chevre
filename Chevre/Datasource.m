@@ -186,7 +186,6 @@
         }
     }
     [current_group release];
-    // TODO undo
     [groups addObjectsFromArray: panoramas];
     
     [groupsIndexSet release];
@@ -201,6 +200,11 @@
 - (void) removeGroup: (Group*) group
 {
     [groups removeObject: group];
+}
+
+- (void) removeGroups: (NSArray*) _groups
+{
+    [groups removeObjectsInArray: _groups];
 }
 
 @end
