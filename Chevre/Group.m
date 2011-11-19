@@ -25,18 +25,18 @@
     return self;
 }
 
-- (id) initWithRange: (NSRange) range
+- (id) initWithRange: (NSRange) _range
 {
     self = [self init];
-    [self setRange: range];
+    [self setRange: _range];
     return self;
 }
 
-- (id) initWithName: (NSString*) name andCategory: (NSString*) category withIndex: (NSIndexSet*) indexes
+- (id) initWithName: (NSString*) _name andCategory: (NSString*) _category withIndex: (NSIndexSet*) indexes
 {
     self = [self init];
-    [self setName: name];
-    [self setCategory: category];
+    [self setName: _name];
+    [self setCategory: _category];
     [self setStart: [indexes firstIndex]];
     [self setEnd: [indexes lastIndex]];
     return self;
