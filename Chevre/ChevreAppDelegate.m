@@ -16,6 +16,16 @@
 
 @synthesize window, browserViewController, dates, datesController;
 
++ (void) initialize
+{
+    /* get/set defaults */
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    NSDictionary* defaultValues = [NSDictionary dictionaryWithObjectsAndKeys: 
+                                   @"~/Pictures", @"depot", 
+                                   @"~/Pictures", @"base", nil];
+    [defaults registerDefaults: defaultValues];
+}
+
 - (void) applicationDidFinishLaunching: (NSNotification *) aNotification
 {
     dates = [self getDates];
