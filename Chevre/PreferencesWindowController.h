@@ -25,4 +25,8 @@
 - (IBAction) depotBrowse: (id) sender;
 - (IBAction) baseBrowse: (id) sender;
 
+- (IBAction) basePathIsEntered: (id)sender;
+- (IBAction) depotPathIsEntered: (id)sender;
+
+
 @end

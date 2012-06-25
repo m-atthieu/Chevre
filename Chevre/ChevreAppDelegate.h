@@ -22,6 +22,5 @@
 
 - (IBAction) openPreferencesWindow: (id) sender;
 - (IBAction) openPreviewWindow: (id) sender;
-- (NSArray*) getDates;
 
 @end

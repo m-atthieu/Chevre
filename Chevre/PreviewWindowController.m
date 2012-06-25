@@ -40,7 +40,7 @@
         for(j = range.location; j < (range.location + range.length); ++j){
             image = [datasource imageBrowser: nil itemAtIndex: j];
             NSString* to = [NSString pathWithComponents: [NSArray arrayWithObjects: base, [group category], [image date], [group name], [[image url] lastPathComponent], nil]];
-            NSURL* toURL = [NSURL URLWithString: [@"file://localhost" stringByAppendingString: to]];
+            NSURL* toURL = [NSURL fileURLWithPath: to];
             
             [images addObject: [NSDictionary dictionaryWithObjectsAndKeys: 
                                 [image url], @"from", 

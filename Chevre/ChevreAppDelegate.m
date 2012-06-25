@@ -8,6 +8,7 @@
 
 #import "ChevreAppDelegate.h"
 #import "Datasource.h"
+#import "DateLister.h"
 #import "PreferencesWindowController.h"
 #import "PreviewWindowController.h"
 #import "NSString+regex.h"
@@ -16,6 +17,10 @@
 
 @synthesize window, browserViewController, dates, datesController;
 
+/**
+ * depot : répertoire dans lequel les photos sont en vrac
+ * base  : répertoire dans lequel mettre les images une fois triées
+ */
 + (void) initialize
 {
     /* get/set defaults */
@@ -28,7 +33,17 @@
 
 - (void) applicationDidFinishLaunching: (NSNotification *) aNotification
 {
-    dates = [self getDates];
+    DateLister* dl = [[DateLister alloc] init];
+    NSString* path = [[NSUserDefaults standardUserDefaults] stringForKey: @"depot"];
+    dates = [dl getDatesInPath: path];
+    NSLog(@"%@", dates);
+    [dl release];
+    
+    [[NSNotificationCenter defaultCenter] addObserver: self
+                                             selector: @selector(preferencesChanged:) 
+                                                 name: @"PreferencesMightHaveChanged"
+                                               object: nil];
+
 }
 
 - (void) awakeFromNib
@@ -49,46 +64,7 @@
     [wc showWindow: self];
 }
 
-
-- (NSArray*) getDates
-{
-    NSFileManager* fm = [NSFileManager defaultManager];
-    NSString* depot = [[NSUserDefaults standardUserDefaults] valueForKey: @"depot"];
-    NSURL* base = [NSURL URLWithString: depot];
-    NSDirectoryEnumerator* de = [fm enumeratorAtURL: base
-                         includingPropertiesForKeys:[NSArray arrayWithObjects: NSURLIsDirectoryKey, nil]
-                                            options: NSDirectoryEnumerationSkipsHiddenFiles
-                                       errorHandler: nil];
-    NSMutableArray* newDates = [[NSMutableArray alloc] init];
-    NSArray* content;
-
-    // so we can return to the base directory
-    [newDates addObject: [NSDictionary dictionaryWithObjectsAndKeys: base, @"url", @"vrac", @"name", nil]];
-    
-    NSURL* filename;
-    NSString* path;
-    BOOL match;
-    NSNumber* isDir;
-    while (filename = [de nextObject]){
-        path = [filename path];
-        match = [path matchRegex: @".*[0-9]{4}\/[0-9]{2}\/[0-9]{2}"];
-        [filename getResourceValue: &isDir forKey: NSURLIsDirectoryKey error: nil];
-        if(match && [isDir boolValue] == YES){
-            content = [fm contentsOfDirectoryAtURL: filename 
-                        includingPropertiesForKeys: nil 
-                                           options: NSDirectoryEnumerationSkipsHiddenFiles
-                                             error: nil];
-            if( [content count] != 0){
-                [newDates addObject: [NSDictionary dictionaryWithObjectsAndKeys: 
-                                      filename, @"url", 
-                                      path, @"name", nil]];
-            }
-        }
-    }
-
-    return [newDates autorelease];
-}
-
+/* quand la date dans la liste déroulante est changée */
 - (IBAction) changeDate: (id) sender
 {
     NSURL* url = [[datesController selection] valueForKey: @"url"];
@@ -97,6 +73,19 @@
     [datasource setUndoManager: undoManager];
     [browserViewController updateDatasource: datasource];
     [datasource release];
+}
+
+- (void) preferencesChanged: (NSNotification *) notification
+{
+    if ([[notification name] isEqualToString: @"PreferencesMightHaveChanged"]){
+        NSLog(@"preferences changed ?");
+    }
+}
+
+- (void) dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver: self];
+    [super dealloc];
 }
 
 @end

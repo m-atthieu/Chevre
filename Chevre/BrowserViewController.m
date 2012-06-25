@@ -33,7 +33,7 @@
 
         NSString* depot = [[NSUserDefaults standardUserDefaults] valueForKey: @"depot"];
         if(depot != nil){
-            NSURL* url = [NSURL URLWithString: depot];
+            NSURL* url = [NSURL fileURLWithPath: depot];
             Datasource* tDatasource = [[Datasource alloc] initWithURL: url];
             [tDatasource setUndoManager: [self undoManager]];
             [self setDatasource: tDatasource];

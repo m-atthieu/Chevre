@@ -22,9 +22,9 @@
     if (self) {
         [self setDefaults: [NSUserDefaults standardUserDefaults]];
         self.panoramaDelay = [defaults integerForKey: @"panoramaDelay"];
-	if(self.panoramaDelay == 0){
-	    self.panoramaDelay = 10;
-	}
+        if(self.panoramaDelay == 0){
+            self.panoramaDelay = 10;
+        }
         self.depot = [defaults stringForKey: @"depot"];
         self.base = [defaults stringForKey: @"base"];
     }
@@ -76,6 +76,26 @@
     // paths are already saved
     NSNumber* delay = [NSNumber numberWithInt: [panoramaDelayTextField intValue]];
     [defaults setValue: delay forKey: @"panoramaDelay"];
+    [defaults synchronize];
+    [[NSNotificationCenter defaultCenter] 
+        postNotificationName: @"PreferencesMightHaveChanged" 
+        object: self];
+
+}
+
+#pragma mark -
+#pragma mark NSTextField Delegate
+
+- (IBAction) basePathIsEntered: (id)sender
+{
+    [[NSUserDefaults standardUserDefaults] setValue: [baseTextField stringValue] forKey: @"base"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (IBAction) depotPathIsEntered: (id)sender
+{
+    [[NSUserDefaults standardUserDefaults] setValue: [depotTextField stringValue] forKey: @"depot"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 @end

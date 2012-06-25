@@ -11,10 +11,12 @@
 		4370A66A1581D9A20086BDE7 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4370A6691581D9A20086BDE7 /* SenTestingKit.framework */; };
 		4370A66B1581D9A20086BDE7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43E92E2D140F627700A54E6C /* Cocoa.framework */; };
 		4370A6711581D9A20086BDE7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4370A66F1581D9A20086BDE7 /* InfoPlist.strings */; };
-		4370A6741581D9A20086BDE7 /* UnitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4370A6731581D9A20086BDE7 /* UnitTests.m */; };
 		43802A6D1411B5800004F585 /* PreviewWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43802A6C1411B5800004F585 /* PreviewWindow.xib */; };
 		43802A701411B6050004F585 /* PreviewWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43802A6F1411B6050004F585 /* PreviewWindowController.m */; };
 		4381F73214138F1F0099C263 /* NSString+regex.m in Sources */ = {isa = PBXBuildFile; fileRef = 4381F73114138F1F0099C263 /* NSString+regex.m */; };
+		43A0FAE9158DC3120065A12B /* DateLister.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A0FAE8158DC3120065A12B /* DateLister.m */; };
+		43A0FAED158DE1630065A12B /* ChevreAppDelegateTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A0FAEC158DE1630065A12B /* ChevreAppDelegateTest.m */; };
+		43A0FAF0158DE1850065A12B /* DateListerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A0FAEF158DE1850065A12B /* DateListerTest.m */; };
 		43E92E2E140F627700A54E6C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43E92E2D140F627700A54E6C /* Cocoa.framework */; };
 		43E92E38140F627800A54E6C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43E92E36140F627800A54E6C /* InfoPlist.strings */; };
 		43E92E3A140F627800A54E6C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E92E39140F627800A54E6C /* main.m */; };
@@ -37,14 +39,18 @@
 		4370A6691581D9A20086BDE7 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		4370A66E1581D9A20086BDE7 /* UnitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UnitTests-Info.plist"; sourceTree = "<group>"; };
 		4370A6701581D9A20086BDE7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		4370A6721581D9A20086BDE7 /* UnitTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnitTests.h; sourceTree = "<group>"; };
-		4370A6731581D9A20086BDE7 /* UnitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UnitTests.m; sourceTree = "<group>"; };
 		4370A6751581D9A20086BDE7 /* UnitTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UnitTests-Prefix.pch"; sourceTree = "<group>"; };
 		43802A6C1411B5800004F585 /* PreviewWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreviewWindow.xib; sourceTree = "<group>"; };
 		43802A6E1411B6050004F585 /* PreviewWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreviewWindowController.h; sourceTree = "<group>"; };
 		43802A6F1411B6050004F585 /* PreviewWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreviewWindowController.m; sourceTree = "<group>"; };
 		4381F73014138F1F0099C263 /* NSString+regex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+regex.h"; sourceTree = "<group>"; };
 		4381F73114138F1F0099C263 /* NSString+regex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+regex.m"; sourceTree = "<group>"; };
+		43A0FAE7158DC3120065A12B /* DateLister.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateLister.h; sourceTree = "<group>"; };
+		43A0FAE8158DC3120065A12B /* DateLister.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateLister.m; sourceTree = "<group>"; };
+		43A0FAEB158DE1630065A12B /* ChevreAppDelegateTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChevreAppDelegateTest.h; sourceTree = "<group>"; };
+		43A0FAEC158DE1630065A12B /* ChevreAppDelegateTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChevreAppDelegateTest.m; sourceTree = "<group>"; };
+		43A0FAEE158DE1850065A12B /* DateListerTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateListerTest.h; sourceTree = "<group>"; };
+		43A0FAEF158DE1850065A12B /* DateListerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateListerTest.m; sourceTree = "<group>"; };
 		43E92E29140F627700A54E6C /* Chevre.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chevre.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43E92E2D140F627700A54E6C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		43E92E30140F627700A54E6C /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -97,8 +103,10 @@
 		4370A66C1581D9A20086BDE7 /* UnitTests */ = {
 			isa = PBXGroup;
 			children = (
-				4370A6721581D9A20086BDE7 /* UnitTests.h */,
-				4370A6731581D9A20086BDE7 /* UnitTests.m */,
+				43A0FAEB158DE1630065A12B /* ChevreAppDelegateTest.h */,
+				43A0FAEC158DE1630065A12B /* ChevreAppDelegateTest.m */,
+				43A0FAEE158DE1850065A12B /* DateListerTest.h */,
+				43A0FAEF158DE1850065A12B /* DateListerTest.m */,
 				4370A66D1581D9A20086BDE7 /* Supporting Files */,
 			);
 			path = UnitTests;
@@ -207,6 +215,8 @@
 				43802A6C1411B5800004F585 /* PreviewWindow.xib */,
 				43802A6E1411B6050004F585 /* PreviewWindowController.h */,
 				43802A6F1411B6050004F585 /* PreviewWindowController.m */,
+				43A0FAE7158DC3120065A12B /* DateLister.h */,
+				43A0FAE8158DC3120065A12B /* DateLister.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -316,7 +326,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4370A6741581D9A20086BDE7 /* UnitTests.m in Sources */,
+				43A0FAED158DE1630065A12B /* ChevreAppDelegateTest.m in Sources */,
+				43A0FAF0158DE1850065A12B /* DateListerTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +345,7 @@
 				43802A701411B6050004F585 /* PreviewWindowController.m in Sources */,
 				4381F73214138F1F0099C263 /* NSString+regex.m in Sources */,
 				4342E11714753274000C3628 /* ImageBrowserView.m in Sources */,
+				43A0FAE9158DC3120065A12B /* DateLister.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,6 +390,7 @@
 		4370A6761581D9A20086BDE7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Chevre.app/Contents/MacOS/Chevre";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -386,6 +399,7 @@
 				INFOPLIST_FILE = "UnitTests/UnitTests-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -393,6 +407,7 @@
 		4370A6771581D9A20086BDE7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Chevre.app/Contents/MacOS/Chevre";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -401,6 +416,7 @@
 				INFOPLIST_FILE = "UnitTests/UnitTests-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
@@ -482,6 +498,7 @@
 				4370A6771581D9A20086BDE7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		43E92E23140F627700A54E6C /* Build configuration list for PBXProject "Chevre" */ = {
 			isa = XCConfigurationList;
