@@ -16,6 +16,8 @@
 @implementation ChevreAppDelegate
 
 @synthesize window, browserViewController, dates, datesController;
+@synthesize directoryPopup;
+
 
 /**
  * depot : répertoire dans lequel les photos sont en vrac
@@ -33,12 +35,14 @@
 
 - (void) applicationDidFinishLaunching: (NSNotification *) aNotification
 {
+    NSLog(@"finish loading");
     DateLister* dl = [[DateLister alloc] init];
     NSString* path = [[NSUserDefaults standardUserDefaults] stringForKey: @"depot"];
+    [self willChangeValueForKey: @"dates"];
     dates = [dl getDatesInPath: path];
-    NSLog(@"%@", dates);
+    [self didChangeValueForKey: @"dates"];
     [dl release];
-    
+    //NSLog(@"finish : %@", dates);
     [[NSNotificationCenter defaultCenter] addObserver: self
                                              selector: @selector(preferencesChanged:) 
                                                  name: @"PreferencesMightHaveChanged"
@@ -48,7 +52,10 @@
 
 - (void) awakeFromNib
 {
+    NSLog(@"awake");
     [browserViewController setUndoManager: [[window firstResponder] undoManager]];
+    [datesController setContent: dates];
+    //[directoryPopup bind
 }
 
 - (IBAction) openPreferencesWindow: (id) sender
@@ -67,7 +74,10 @@
 /* quand la date dans la liste déroulante est changée */
 - (IBAction) changeDate: (id) sender
 {
-    NSURL* url = [[datesController selection] valueForKey: @"url"];
+    //NSLog(@"change date : %@", self.dates);
+    NSLog(@"%@", datesController);
+    id selection = [datesController selection];
+    NSURL* url = [selection valueForKey: @"url"];
     Datasource* datasource = [[Datasource alloc] initWithURL: url];
     NSUndoManager* undoManager = [[window firstResponder] undoManager];
     [datasource setUndoManager: undoManager];

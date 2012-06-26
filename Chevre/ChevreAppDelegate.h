@@ -19,6 +19,8 @@
 @property (assign) IBOutlet BrowserViewController* browserViewController;
 @property (assign) IBOutlet NSArrayController* datesController;
 @property (assign) IBOutlet NSArray* dates;
+@property (assign) IBOutlet NSPopUpButton* directoryPopup;
+
 
 - (IBAction) openPreferencesWindow: (id) sender;
 - (IBAction) openPreviewWindow: (id) sender;

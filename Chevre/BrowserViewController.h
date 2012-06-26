@@ -17,7 +17,6 @@
 @property (retain) Datasource* datasource;
 
 @property (assign) IBOutlet ImageBrowserView* browserView;
-@property (assign) IBOutlet NSPopUpButton* directoryPopup;
 @property (assign) IBOutlet NSSlider* slider;
 
 /* create group HUDWindow */

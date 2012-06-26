@@ -12,7 +12,6 @@
 
 @synthesize browserView; 
 @synthesize datasource;
-@synthesize directoryPopup;
 @synthesize panel;
 @synthesize nameTextField;
 @synthesize categoryPopup;
