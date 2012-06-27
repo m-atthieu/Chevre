@@ -60,9 +60,8 @@
 
 - (void) updateDatasource: (Datasource*) aDatasource
 {
-    [datasource release];
     [aDatasource setUndoManager: [self undoManager]];
-    [self setDatasource: aDatasource];
+    datasource = aDatasource;
     [browserView setDataSource: aDatasource];
     [browserView reloadData];
 }

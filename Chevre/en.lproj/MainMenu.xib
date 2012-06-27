@@ -2672,7 +2672,7 @@
 						<string key="label">contentValues: arrangedObjects.name</string>
 						<reference key="source" ref="970578932"/>
 						<reference key="destination" ref="579150145"/>
-						<object class="NSNibBindingConnector" key="connector">
+						<object class="NSNibBindingConnector" key="connector" id="790423726">
 							<reference key="NSSource" ref="970578932"/>
 							<reference key="NSDestination" ref="579150145"/>
 							<string key="NSLabel">contentValues: arrangedObjects.name</string>
@@ -2682,6 +2682,23 @@
 						</object>
 					</object>
 					<int key="connectionID">688</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">selectedIndex: selectionIndex</string>
+						<reference key="source" ref="970578932"/>
+						<reference key="destination" ref="579150145"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="970578932"/>
+							<reference key="NSDestination" ref="579150145"/>
+							<string key="NSLabel">selectedIndex: selectionIndex</string>
+							<string key="NSBinding">selectedIndex</string>
+							<string key="NSKeyPath">selectionIndex</string>
+							<reference key="NSPreviousConnector" ref="790423726"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">690</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -4703,7 +4720,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">688</int>
+			<int key="maxID">690</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">

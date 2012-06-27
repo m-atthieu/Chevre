@@ -74,7 +74,7 @@
 /* quand la date dans la liste déroulante est changée */
 - (IBAction) changeDate: (id) sender
 {
-    //NSLog(@"change date : %@", self.dates);
+    NSLog(@"change date : %@", self.dates);
     NSLog(@"%@", datesController);
     id selection = [datesController selection];
     NSURL* url = [selection valueForKey: @"url"];
