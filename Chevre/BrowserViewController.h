@@ -82,4 +82,6 @@
  */
 - (void) updateDatasource: (Datasource*) aDatasource;
 
+- (NSArray*) selectedImages;
+
 @end

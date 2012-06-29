@@ -221,4 +221,15 @@
     [browserView reloadData];
 }
 
+- (NSArray*) selectedImages
+{
+    NSIndexSet* indices = [browserView selectionIndexes];
+    NSMutableArray* selection = [[NSMutableArray alloc] initWithCapacity: [indices count]];
+    int i = 0;
+    for(i = [indices firstIndex]; i <= [indices lastIndex]; ++i){
+        [selection addObject: [datasource imageBrowser: browserView itemAtIndex: i]];
+    }
+    return selection;
+}
+
 @end

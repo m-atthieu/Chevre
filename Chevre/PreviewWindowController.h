@@ -14,11 +14,10 @@
 
 @property (assign) IBOutlet NSArrayController* arrayController;
 @property (retain) NSMutableArray* images;
-@property (retain) Datasource* datasource;
 
 - (id) initWithDatasource: (Datasource*) datasource;
-- (IBAction) commit: (id) sender;
+- (id) initWithArray: (NSArray*) anArray;
 
-- (void) prepareDatasource;
+- (IBAction) commit: (id) sender;
 
 @end

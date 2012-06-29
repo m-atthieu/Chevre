@@ -24,5 +24,6 @@
 
 - (IBAction) openPreferencesWindow: (id) sender;
 - (IBAction) openPreviewWindow: (id) sender;
+- (IBAction) sortSelectedByDate: (id) sender;
 
 @end

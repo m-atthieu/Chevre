@@ -9,23 +9,56 @@
 #import "Image.h"
 #import "PreviewWindowController.h"
 
+@interface PreviewWindowController (private)
+
+- (void) prepareArray: (NSArray*) anArray;
+- (void) prepareDatasource: (Datasource*) aDatasource;
+
+@end
+
 @implementation PreviewWindowController
 
-@synthesize datasource, arrayController, images;
+@synthesize arrayController, images;
 
 - (id) initWithDatasource: (Datasource *) aDatasource
 {
     self = [super initWithWindowNibName: @"PreviewWindow" owner: self];
     if (self) {
-        [self setDatasource: aDatasource];
         images = [[NSMutableArray alloc] initWithCapacity: [aDatasource numberOfItemsInImageBrowser: nil]];
-        [self prepareDatasource];
+        [self prepareDatasource: aDatasource];
     }
     
     return self;
 }
 
-- (void) prepareDatasource
+- (id) initWithArray: (NSArray *) anArray
+{
+    self = [super initWithWindowNibName: @"PreviewWindow" owner: self];
+    if(self){
+        images = [[NSMutableArray alloc] initWithCapacity: [anArray count]];
+        [self prepareArray: anArray];
+    }
+    return self;
+}
+
+- (void) prepareArray: (NSArray *) anArray
+{
+    NSString* depot = [[NSUserDefaults standardUserDefaults] valueForKey: @"depot"];
+    int i;
+    Image* image;
+    
+    for (i = 0; i < [anArray count]; ++i) {
+        image = [anArray objectAtIndex: i];
+        NSString* to = [NSString pathWithComponents: [NSArray arrayWithObjects: depot, [image date], [[image url] lastPathComponent], nil]];
+        NSURL* toURL = [NSURL fileURLWithPath: to];
+            
+        [images addObject: [NSDictionary dictionaryWithObjectsAndKeys: 
+                                [image url], @"from", 
+                                toURL, @"to", nil]];
+    }
+}
+
+- (void) prepareDatasource: (Datasource*) aDatasource
 {
     NSString* base = [[NSUserDefaults standardUserDefaults] valueForKey: @"base"];
     int i;
@@ -34,11 +67,11 @@
     NSRange range;
     Image* image;
     
-    for (i = 0; i < [datasource numberOfGroupsInImageBrowser: nil]; ++i) {
-        group = [datasource getGroupAtIndex: i];
+    for (i = 0; i < [aDatasource numberOfGroupsInImageBrowser: nil]; ++i) {
+        group = [aDatasource getGroupAtIndex: i];
         range = [group range];
         for(j = range.location; j < (range.location + range.length); ++j){
-            image = [datasource imageBrowser: nil itemAtIndex: j];
+            image = [aDatasource imageBrowser: nil itemAtIndex: j];
             NSString* to = [NSString pathWithComponents: [NSArray arrayWithObjects: base, [group category], [image date], [group name], [[image url] lastPathComponent], nil]];
             NSURL* toURL = [NSURL fileURLWithPath: to];
             

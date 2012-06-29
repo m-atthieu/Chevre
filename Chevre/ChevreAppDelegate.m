@@ -71,6 +71,20 @@
     [wc showWindow: self];
 }
 
+- (IBAction) sortSelectedByDate: (id) sender
+{
+    // check we're in @"depot"
+    id selectedDate = [datesController selection];
+    NSString* name = [selectedDate valueForKey: @"name"];
+    if(! [name isEqualToString: @"/vrac"]) {
+        return;
+    }
+    // only for selected images
+    NSArray* selection = [browserViewController selectedImages];
+    NSWindowController* wc = [[PreviewWindowController alloc] initWithArray: selection];
+    [wc showWindow: self];
+}
+
 /* quand la date dans la liste déroulante est changée */
 - (IBAction) changeDate: (id) sender
 {
