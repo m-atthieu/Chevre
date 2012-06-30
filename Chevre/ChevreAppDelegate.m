@@ -47,6 +47,10 @@
                                              selector: @selector(preferencesChanged:) 
                                                  name: @"PreferencesMightHaveChanged"
                                                object: nil];
+    [[NSNotificationCenter defaultCenter] addObserver: self
+                                             selector: @selector(datasourceChanged:)
+                                                 name: @"DatasourceMightHaveChanged"
+                                               object: nil];
 
 }
 
@@ -67,7 +71,8 @@
 
 - (IBAction) openPreviewWindow: (id) sender
 {
-    NSWindowController* wc = [[PreviewWindowController alloc] initWithDatasource: [browserViewController datasource]];
+    Datasource* datasource = [browserViewController datasource];
+    NSWindowController* wc = [[PreviewWindowController alloc] initWithDatasource: datasource];
     [wc showWindow: self];
 }
 
@@ -88,8 +93,6 @@
 /* quand la date dans la liste déroulante est changée */
 - (IBAction) changeDate: (id) sender
 {
-    NSLog(@"change date : %@", self.dates);
-    NSLog(@"%@", datesController);
     id selection = [datesController selection];
     NSURL* url = [selection valueForKey: @"url"];
     Datasource* datasource = [[Datasource alloc] initWithURL: url];
@@ -103,6 +106,14 @@
 {
     if ([[notification name] isEqualToString: @"PreferencesMightHaveChanged"]){
         NSLog(@"preferences changed ?");
+    }
+}
+
+- (void) datasourceChanged: (NSNotification*) aNotification
+{
+    if ([[aNotification name] isEqualToString: @"DatasourceMightHaveChanged"]){
+        NSLog(@"datasource changed ?");
+        [self changeDate: nil];
     }
 }
 

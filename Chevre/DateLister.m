@@ -51,7 +51,7 @@
             }
         }
     }
-    return newDates;
+    return [newDates autorelease];
 }
 
 - (NSMutableArray*) addDepotPath: (NSMutableArray*) anArray

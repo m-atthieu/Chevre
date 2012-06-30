@@ -104,14 +104,21 @@
         to = [file valueForKey: @"to"];
         directory = [to URLByDeletingLastPathComponent];
 #if MAC_OS_X_VERSION_MIN_REQUIRED > MAC_OS_X_VERSION_10_6
-        [fm createDirectoryAtURL: directory withIntermediateDirectories: YES attributes: nil error: &error];
+        [fm createDirectoryAtURL: directory withIntermediateDirectories: YES
+                      attributes: nil
+                           error: &error];
 #else
-        [fm createDirectoryAtPath: [directory path] withIntermediateDirectories: YES attributes: nil error: &error];
+        [fm createDirectoryAtPath: [directory path] withIntermediateDirectories: YES 
+                       attributes: nil
+                            error: &error];
 #endif
         if(error != nil){ NSLog(@"error creating %@: %@", directory, [error localizedDescription]); continue; }
         [fm moveItemAtURL: [file valueForKey: @"from"] toURL: to error: &error];
         if(error != nil){ NSLog(@"error moving %@: %@", [file valueForKey: @"from"], [error localizedDescription]); continue; }
     }
+    [[NSNotificationCenter defaultCenter] postNotificationName: @"DatasourceMightHaveChanged" 
+                                                        object: self];
+    //[window performClose: self];
     [self close];
 }
 

@@ -7,6 +7,7 @@
 //
 
 #import "BrowserViewController.h"
+#import "Image.h"
 
 @implementation BrowserViewController
 
@@ -61,7 +62,8 @@
 - (void) updateDatasource: (Datasource*) aDatasource
 {
     [aDatasource setUndoManager: [self undoManager]];
-    datasource = aDatasource;
+    [datasource release];
+    datasource = [aDatasource retain];
     [browserView setDataSource: aDatasource];
     [browserView reloadData];
 }
@@ -225,11 +227,14 @@
 {
     NSIndexSet* indices = [browserView selectionIndexes];
     NSMutableArray* selection = [[NSMutableArray alloc] initWithCapacity: [indices count]];
-    int i = 0;
-    for(i = [indices firstIndex]; i <= [indices lastIndex]; ++i){
-        [selection addObject: [datasource imageBrowser: browserView itemAtIndex: i]];
+    Image* image;
+    int i = [indices firstIndex];
+    int n = [indices lastIndex];
+    for(; i <= n; ++i){
+        image = [datasource imageBrowser: nil itemAtIndex: i];
+        [selection addObject: image];
     }
-    return selection;
+    return [selection autorelease];
 }
 
 @end
