@@ -33,15 +33,20 @@
     [defaults registerDefaults: defaultValues];
 }
 
-- (void) applicationDidFinishLaunching: (NSNotification *) aNotification
+- (void) updateDatesController
 {
-    NSLog(@"finish loading");
     DateLister* dl = [[DateLister alloc] init];
     NSString* path = [[NSUserDefaults standardUserDefaults] stringForKey: @"depot"];
     [self willChangeValueForKey: @"dates"];
     dates = [dl getDatesInPath: path];
     [self didChangeValueForKey: @"dates"];
     [dl release];
+}
+
+- (void) applicationDidFinishLaunching: (NSNotification *) aNotification
+{
+    NSLog(@"finish loading");
+    [self updateDatesController];
     //NSLog(@"finish : %@", dates);
     [[NSNotificationCenter defaultCenter] addObserver: self
                                              selector: @selector(preferencesChanged:) 
@@ -113,6 +118,7 @@
 {
     if ([[aNotification name] isEqualToString: @"DatasourceMightHaveChanged"]){
         NSLog(@"datasource changed ?");
+        [self updateDatesController];
         [self changeDate: nil];
     }
 }
