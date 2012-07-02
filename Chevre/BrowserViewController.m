@@ -177,9 +177,9 @@
     // TODO : select group category
     int i = 0;
     for(i = 0; i < [editCategoryPopup numberOfItems]; ++i){
-	if([[[editCategoryPopup itemAtIndex: i] title] isEqualToString: [group category]]){
-	    [editCategoryPopup selectItemAtIndex: i];
-	}
+        if([[[editCategoryPopup itemAtIndex: i] title] isEqualToString: [group category]]){
+            [editCategoryPopup selectItemAtIndex: i];
+        }
     }
     [editPanel makeKeyAndOrderFront: nil];
 }
