@@ -264,6 +264,9 @@
 /* Begin PBXProject section */
 		43E92E20140F627700A54E6C /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
 			buildConfigurationList = 43E92E23140F627700A54E6C /* Build configuration list for PBXProject "Chevre" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
