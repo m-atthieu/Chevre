@@ -67,6 +67,12 @@
     //[directoryPopup bind
 }
 
+- (BOOL) applicationShouldTerminateAfterLastWindowClosed: (NSApplication *) theApplication
+{
+    return YES;
+}
+
+
 - (IBAction) openPreferencesWindow: (id) sender
 {
     NSWindowController* wc = [[PreferencesWindowController alloc] init];
